@@ -1,0 +1,17 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 18f32eaa-e064-4e16-9b92-ed9fdf621f65)
+
+  (paper "A4")
+
+  (title_block
+    (title "Analog Frontend")
+    (date "2024-03-21")
+    (rev "1")
+    (company "Owen Leishman")
+  )
+
+  (lib_symbols
+  )
+
+)
