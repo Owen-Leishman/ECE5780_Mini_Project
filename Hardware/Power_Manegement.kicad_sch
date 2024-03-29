@@ -1549,6 +1549,9 @@
   (junction (at 62.23 245.11) (diameter 0) (color 0 0 0 0)
     (uuid a9b0a12e-0a65-487b-81fd-b2b47e4ab044)
   )
+  (junction (at 161.29 120.65) (diameter 0) (color 0 0 0 0)
+    (uuid b2d273ec-3697-4c2c-83e3-e49b63c5c9d1)
+  )
   (junction (at 63.5 205.74) (diameter 0) (color 0 0 0 0)
     (uuid b7b012dd-e5af-4854-b1fe-4bc2fbe3e5be)
   )
@@ -1633,9 +1636,17 @@
     (stroke (width 0) (type default))
     (uuid 0107d521-fa9c-440a-872a-0397824de8e9)
   )
+  (wire (pts (xy 156.21 120.65) (xy 161.29 120.65))
+    (stroke (width 0) (type default))
+    (uuid 013255a5-bea8-4141-a906-1beeac562a18)
+  )
   (wire (pts (xy 62.23 233.68) (xy 55.88 233.68))
     (stroke (width 0) (type default))
     (uuid 014c21ad-05ad-4679-bb28-9e234e7cfa5e)
+  )
+  (wire (pts (xy 87.63 257.81) (xy 83.82 257.81))
+    (stroke (width 0) (type default))
+    (uuid 035a2760-e3f4-4cdd-8ab8-be5eb37be106)
   )
   (wire (pts (xy 318.77 200.66) (xy 314.96 200.66))
     (stroke (width 0) (type default))
@@ -1772,6 +1783,10 @@
   (wire (pts (xy 62.23 256.54) (xy 62.23 260.35))
     (stroke (width 0) (type default))
     (uuid 206ddc13-57f7-47f0-ae06-f6bf5ce6fc4c)
+  )
+  (wire (pts (xy 161.29 110.49) (xy 161.29 111.76))
+    (stroke (width 0) (type default))
+    (uuid 20e233b0-49c3-4abe-9a08-309ed0749155)
   )
   (wire (pts (xy 129.54 228.6) (xy 130.81 228.6))
     (stroke (width 0) (type default))
@@ -1916,6 +1931,14 @@
   (wire (pts (xy 63.5 193.04) (xy 63.5 195.58))
     (stroke (width 0) (type default))
     (uuid 3ab0cd84-cee9-40b7-ba39-c50a46cbdf34)
+  )
+  (wire (pts (xy 161.29 76.2) (xy 161.29 78.74))
+    (stroke (width 0) (type default))
+    (uuid 3ad5e302-1137-43fe-b10e-d38201b5f781)
+  )
+  (wire (pts (xy 83.82 257.81) (xy 83.82 255.27))
+    (stroke (width 0) (type default))
+    (uuid 3c250b62-a84e-492b-b881-b348a1300322)
   )
   (wire (pts (xy 344.17 59.69) (xy 344.17 60.96))
     (stroke (width 0) (type default))
@@ -2076,6 +2099,10 @@
   (wire (pts (xy 336.55 146.05) (xy 336.55 147.32))
     (stroke (width 0) (type default))
     (uuid 5e733de4-3985-444c-a9a0-352ced7dffa2)
+  )
+  (wire (pts (xy 171.45 86.36) (xy 171.45 90.17))
+    (stroke (width 0) (type default))
+    (uuid 60134f75-94ad-4841-8b50-81402ae95f1d)
   )
   (wire (pts (xy 129.54 241.3) (xy 129.54 242.57))
     (stroke (width 0) (type default))
@@ -2289,6 +2316,10 @@
     (stroke (width 0) (type default))
     (uuid 8edb4ef2-a6a6-4ae5-ba8f-4cf31465f7ea)
   )
+  (wire (pts (xy 160.02 90.17) (xy 161.29 90.17))
+    (stroke (width 0) (type default))
+    (uuid 906b651d-59ec-4ff8-b43a-10dcd1868076)
+  )
   (wire (pts (xy 106.68 193.04) (xy 110.49 193.04))
     (stroke (width 0) (type default))
     (uuid 90f24843-ab37-45dd-b984-60080c55ad40)
@@ -2404,6 +2435,10 @@
   (wire (pts (xy 326.39 50.8) (xy 316.23 50.8))
     (stroke (width 0) (type default))
     (uuid a67bf3c1-4841-4a7e-af6e-d3e6a8c0c000)
+  )
+  (wire (pts (xy 161.29 120.65) (xy 165.1 120.65))
+    (stroke (width 0) (type default))
+    (uuid a759b50b-82b0-4d5d-a956-063dd21bb126)
   )
   (wire (pts (xy 191.77 187.96) (xy 191.77 190.5))
     (stroke (width 0) (type default))
@@ -2621,6 +2656,10 @@
     (stroke (width 0) (type default))
     (uuid db6249a4-4266-4ebf-9c60-20f21bf0d97c)
   )
+  (wire (pts (xy 161.29 119.38) (xy 161.29 120.65))
+    (stroke (width 0) (type default))
+    (uuid db7fc5c1-4753-448c-b4f7-697abae5f1b5)
+  )
   (wire (pts (xy 339.09 45.72) (xy 316.23 45.72))
     (stroke (width 0) (type default))
     (uuid db846c02-1be8-4089-b929-941939147179)
@@ -2637,6 +2676,10 @@
     (stroke (width 0) (type default))
     (uuid ddac1857-b102-43cd-aecb-0d2967dc12d9)
   )
+  (wire (pts (xy 171.45 76.2) (xy 171.45 78.74))
+    (stroke (width 0) (type default))
+    (uuid ddb81b91-aaec-402f-80ee-874562d3d582)
+  )
   (wire (pts (xy 130.81 59.69) (xy 130.81 64.77))
     (stroke (width 0) (type default))
     (uuid dee7a442-ab4a-4c63-8c3d-e1400cf7f18a)
@@ -2644,6 +2687,10 @@
   (wire (pts (xy 185.42 59.69) (xy 185.42 64.77))
     (stroke (width 0) (type default))
     (uuid deef41d6-88f8-4364-940d-886e65b23d52)
+  )
+  (wire (pts (xy 171.45 90.17) (xy 172.72 90.17))
+    (stroke (width 0) (type default))
+    (uuid df03efa2-2c21-4196-a4fe-4c864dd3915a)
   )
   (wire (pts (xy 344.17 46.99) (xy 344.17 48.26))
     (stroke (width 0) (type default))
@@ -2704,6 +2751,10 @@
   (wire (pts (xy 118.11 193.04) (xy 121.92 193.04))
     (stroke (width 0) (type default))
     (uuid eab1e0b0-8c74-44b7-a7dc-85736ece278b)
+  )
+  (wire (pts (xy 161.29 90.17) (xy 161.29 86.36))
+    (stroke (width 0) (type default))
+    (uuid eba32ceb-70cf-49fc-84db-86eeda868f9e)
   )
   (wire (pts (xy 382.27 76.2) (xy 379.73 76.2))
     (stroke (width 0) (type default))
@@ -2792,6 +2843,10 @@
   (wire (pts (xy 292.1 129.54) (xy 281.94 129.54))
     (stroke (width 0) (type default))
     (uuid f9e7957c-9cb6-430e-ab14-247434e71afd)
+  )
+  (wire (pts (xy 83.82 246.38) (xy 83.82 247.65))
+    (stroke (width 0) (type default))
+    (uuid fa11cf5f-718b-4958-9dbc-927d463c445c)
   )
   (wire (pts (xy 55.88 233.68) (xy 55.88 236.22))
     (stroke (width 0) (type default))
@@ -3181,6 +3236,13 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
+  (global_label "CHRG_STAT2" (shape input) (at 160.02 90.17 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 9132aa70-c5aa-478a-982b-de54c0375fb8)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 145.5633 90.17 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
   (global_label "Batt+" (shape input) (at 187.96 201.93 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 9d4acaa0-ffd2-48bb-a2f5-5aecdf59fe43)
@@ -3377,6 +3439,13 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
+  (global_label "Wireless_Status" (shape input) (at 87.63 257.81 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid ef2fe2b9-d0fd-49f8-a4d9-35e2d8c07ad0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 105.2314 257.81 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
   (global_label "5v_USB" (shape input) (at 50.8 123.19 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid f2824c44-ac19-4701-a4c2-1a9a6f18b28f)
@@ -3384,10 +3453,17 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "Fuel_Status" (shape input) (at 165.1 120.65 180) (fields_autoplaced)
+  (global_label "CHRG_STAT1" (shape input) (at 172.72 90.17 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid f912d8f0-ac9b-4298-beee-e27e148c2662)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.1767 90.17 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "Fuel_Status" (shape input) (at 156.21 120.65 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid f9780869-1e4f-44d0-931e-1ff700dff247)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 151.2482 120.65 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 142.3582 120.65 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -3423,13 +3499,13 @@
   (symbol (lib_id "Device:C") (at 52.07 245.11 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0286ebfc-717b-4dae-98a7-3a510fdbab6e)
-    (property "Reference" "C17" (at 48.26 246.38 90)
+    (property "Reference" "C7" (at 48.26 246.38 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "80n" (at 55.88 246.38 90)
+    (property "Value" "82n" (at 55.88 246.38 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 55.88 244.1448 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 55.88 244.1448 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 52.07 245.11 0)
@@ -3440,7 +3516,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C17") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -3449,13 +3525,13 @@
   (symbol (lib_id "Device:C") (at 355.6 146.05 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 05f9810d-dc58-409d-ad00-9a84f6e21ed4)
-    (property "Reference" "C23" (at 354.33 142.24 90)
+    (property "Reference" "C32" (at 354.33 142.24 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100n" (at 354.33 149.86 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 356.5652 149.86 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 356.5652 149.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 355.6 146.05 0)
@@ -3466,7 +3542,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C23") (unit 1)
+          (reference "C32") (unit 1)
         )
       )
     )
@@ -3475,13 +3551,13 @@
   (symbol (lib_id "Device:C") (at 386.08 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 06b5ce62-0074-4b7c-9522-4e94b5704f32)
-    (property "Reference" "C26" (at 384.81 128.27 90)
+    (property "Reference" "C34" (at 384.81 128.27 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 384.81 135.89 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 387.0452 135.89 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 387.0452 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 386.08 132.08 0)
@@ -3492,7 +3568,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C26") (unit 1)
+          (reference "C34") (unit 1)
         )
       )
     )
@@ -3522,7 +3598,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3547,7 +3623,7 @@
     (property "Value" "1u" (at 195.58 138.43 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 197.8152 138.43 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 197.8152 138.43 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 196.85 134.62 0)
@@ -3564,6 +3640,49 @@
     )
   )
 
+  (symbol (lib_id "power:+3.3V") (at 161.29 76.2 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 09583b00-8774-4a2b-9d1e-48be2939b650)
+    (property "Reference" "#PWR05" (at 161.29 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 161.29 72.39 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 161.29 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 161.29 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 02651a6e-245d-452d-9acd-aa0045e6f268))
+    (instances
+      (project "ASIC_Implementation_Connector"
+        (path "/1685d2c4-3512-4986-b3f3-64e634b0e93d"
+          (reference "#PWR05") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6"
+          (reference "#PWR04") (unit 1)
+        )
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "#PWR0107") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_LED"
+        (path "/c7125fbd-eadc-49ca-99e7-eb70f83a9f8f"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:R") (at 274.32 201.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0c52bd41-901e-4d95-a9d3-2af85d854d72)
@@ -3573,7 +3692,7 @@
     (property "Value" "100k" (at 276.86 203.835 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 272.542 201.93 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 272.542 201.93 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 274.32 201.93 0)
@@ -3632,7 +3751,7 @@
           (reference "#PWR04") (unit 1)
         )
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3651,13 +3770,13 @@
   (symbol (lib_id "Device:C") (at 52.07 208.28 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0d08e4bb-979f-4103-b645-71bee334ff63)
-    (property "Reference" "C6" (at 54.61 207.01 90)
+    (property "Reference" "C5" (at 54.61 207.01 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10nf" (at 48.26 207.01 90)
+    (property "Value" "10n" (at 48.26 207.01 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 48.26 209.2452 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 48.26 209.2452 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 52.07 208.28 0)
@@ -3668,7 +3787,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C6") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -3677,7 +3796,7 @@
   (symbol (lib_id "CSD75207W15:CSD75207W15") (at 53.34 120.65 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1224e5ea-8c46-41a5-af73-26a15102a848)
-    (property "Reference" "IC2" (at 67.31 114.3 0)
+    (property "Reference" "IC1" (at 67.31 114.3 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CSD75207W15" (at 67.31 116.84 0)
@@ -3716,7 +3835,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "IC2") (unit 1)
+          (reference "IC1") (unit 1)
         )
       )
     )
@@ -3731,7 +3850,7 @@
     (property "Value" "20k" (at 135.89 226.06 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 134.62 230.378 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 134.62 230.378 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 134.62 228.6 0)
@@ -3747,7 +3866,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R7") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3772,7 +3891,7 @@
     (property "Value" "10k" (at 187.96 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 183.642 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 183.642 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 185.42 55.88 0)
@@ -3788,7 +3907,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R9") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3807,7 +3926,7 @@
   (symbol (lib_id "power:GNDA") (at 355.6 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 15043050-ebae-44cd-a2ea-e74bcd71070c)
-    (property "Reference" "#PWR048" (at 355.6 67.31 0)
+    (property "Reference" "#PWR052" (at 355.6 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 355.6 66.04 0)
@@ -3823,7 +3942,50 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR052") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 83.82 246.38 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 177a086b-4ff0-4953-86e1-075be329b666)
+    (property "Reference" "#PWR05" (at 83.82 250.19 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 83.82 242.57 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 83.82 246.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 83.82 246.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 0686faef-aa4f-4b12-beb0-35a8933676a3))
+    (instances
+      (project "ASIC_Implementation_Connector"
+        (path "/1685d2c4-3512-4986-b3f3-64e634b0e93d"
+          (reference "#PWR05") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6"
+          (reference "#PWR04") (unit 1)
+        )
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "#PWR0104") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_LED"
+        (path "/c7125fbd-eadc-49ca-99e7-eb70f83a9f8f"
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -3853,7 +4015,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3872,13 +4034,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 323.85 200.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1a457811-ab74-4e56-9e75-954dbbb9f860)
-    (property "Reference" "J4" (at 326.39 201.295 0)
+    (property "Reference" "J10" (at 326.39 201.295 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 326.39 203.835 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 323.85 200.66 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 323.85 200.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 323.85 200.66 0)
@@ -3889,7 +4051,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J4") (unit 1)
+          (reference "J10") (unit 1)
         )
       )
     )
@@ -3898,13 +4060,13 @@
   (symbol (lib_id "Device:C") (at 114.3 198.12 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1ce9811f-42c2-42b1-9630-6416074f8e67)
-    (property "Reference" "C8" (at 116.84 196.85 90)
+    (property "Reference" "C13" (at 116.84 196.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470n" (at 110.49 196.85 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 110.49 199.0852 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 110.49 199.0852 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 114.3 198.12 0)
@@ -3915,7 +4077,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C8") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -3945,7 +4107,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -3964,13 +4126,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 198.12 185.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 204d0363-b43d-4500-b83f-d015f2554857)
-    (property "Reference" "J10" (at 200.66 184.785 0)
+    (property "Reference" "J5" (at 200.66 184.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (at 200.66 187.325 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 198.12 185.42 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 198.12 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 198.12 185.42 0)
@@ -3982,7 +4144,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J10") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
@@ -4012,7 +4174,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4031,16 +4193,16 @@
   (symbol (lib_id "Device:L") (at 336.55 142.24 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 26ec4849-7dfb-4b79-8d2c-4592fc57adca)
-    (property "Reference" "L1" (at 337.82 141.605 0)
+    (property "Reference" "L3" (at 337.82 141.605 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7uH" (at 337.82 144.145 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 336.55 142.24 0)
+    (property "Footprint" "Inductor_SMD:L_0603_1608Metric" (at 336.55 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 336.55 142.24 0)
+    (property "Datasheet" "https://www.mouser.com/datasheet/2/281/1/JELF243B_0033-1634182.pdf" (at 336.55 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5478dbbb-11a3-4686-9f46-2e2f5d47aec4))
@@ -4048,7 +4210,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "L1") (unit 1)
+          (reference "L3") (unit 1)
         )
       )
     )
@@ -4078,7 +4240,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4118,7 +4280,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4137,7 +4299,7 @@
   (symbol (lib_id "BD8316GWL-E2:BD8316GWL-E2") (at 314.96 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2de5194d-c14b-40b7-b042-60ea546015bf)
-    (property "Reference" "IC5" (at 328.93 110.49 0)
+    (property "Reference" "IC7" (at 328.93 110.49 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BD8316GWL-E2" (at 328.93 113.03 0)
@@ -4178,7 +4340,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "IC5") (unit 1)
+          (reference "IC7") (unit 1)
         )
       )
     )
@@ -4208,7 +4370,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4233,7 +4395,7 @@
     (property "Value" "10k" (at 137.16 211.455 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 132.842 209.55 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 132.842 209.55 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 134.62 209.55 0)
@@ -4249,7 +4411,48 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R6") (unit 1)
+          (reference "R9") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "R11") (unit 1)
+        )
+      )
+      (project "RP2040_board"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 161.29 115.57 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 3523576b-976c-4338-bb21-c21c976989ad)
+    (property "Reference" "R4" (at 156.21 114.3 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10k" (at 156.21 116.84 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 159.512 115.57 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 161.29 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b58cebbb-6aaf-4755-8677-c107ec172a11))
+    (pin "2" (uuid a8ed833a-440f-4eb4-bba6-2e2f0538ebbe))
+    (instances
+      (project "ASIC_Implementation_NANO-Fiber"
+        (path "/117d1464-2621-4af4-ad0c-88282cc3c779"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "R58") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4271,10 +4474,10 @@
     (property "Reference" "R4" (at 284.48 123.825 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "102.5k" (at 284.48 126.365 0)
+    (property "Value" "100k" (at 284.48 126.365 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 280.162 124.46 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 280.162 124.46 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 281.94 124.46 0)
@@ -4290,7 +4493,48 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R14") (unit 1)
+          (reference "R17") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "R11") (unit 1)
+        )
+      )
+      (project "RP2040_board"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 171.45 82.55 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3b0a9dfc-4484-4410-832f-d9b953774564)
+    (property "Reference" "R4" (at 173.99 81.915 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10k" (at 173.99 84.455 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 169.672 82.55 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 171.45 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6b4ffe66-7182-426c-b811-0e7fc096af4c))
+    (pin "2" (uuid 9fc32615-e693-41b9-97eb-10594f5950d6))
+    (instances
+      (project "ASIC_Implementation_NANO-Fiber"
+        (path "/117d1464-2621-4af4-ad0c-88282cc3c779"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "R59") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4330,7 +4574,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4420,7 +4664,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4445,7 +4689,7 @@
     (property "Value" "196" (at 130.81 236.22 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 127.762 234.95 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 127.762 234.95 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 129.54 234.95 0)
@@ -4461,7 +4705,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R4") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4480,7 +4724,7 @@
   (symbol (lib_id "BQ51003YFPR:BQ51003YFPR") (at 64.77 187.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 41a6a58a-1d2f-4442-9825-385dbce48cf8)
-    (property "Reference" "IC1" (at 82.55 181.61 0)
+    (property "Reference" "IC2" (at 82.55 181.61 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BQ51003YFPR" (at 82.55 184.15 0)
@@ -4538,7 +4782,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "IC1") (unit 1)
+          (reference "IC2") (unit 1)
         )
       )
     )
@@ -4547,13 +4791,13 @@
   (symbol (lib_id "Device:C") (at 279.4 62.23 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 48a86e15-c833-412f-a963-3df70348b7f2)
-    (property "Reference" "C29" (at 278.13 58.42 90)
+    (property "Reference" "C25" (at 278.13 58.42 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 278.13 66.04 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 280.3652 66.04 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 280.3652 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 279.4 62.23 0)
@@ -4564,7 +4808,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C29") (unit 1)
+          (reference "C25") (unit 1)
         )
       )
     )
@@ -4627,7 +4871,7 @@
     (property "Value" "3k" (at 205.74 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 201.422 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 201.422 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 203.2 55.88 0)
@@ -4643,7 +4887,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R8") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4662,16 +4906,16 @@
   (symbol (lib_id "Device:D_Schottky") (at 290.83 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4ae60bb4-5e02-4477-9a17-e8257e45e2a0)
-    (property "Reference" "D2" (at 290.5125 114.3 0)
+    (property "Reference" "D1" (at 290.5125 114.3 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "D_Schottky" (at 290.5125 116.84 0)
+    (property "Value" "MBR130T1G" (at 290.5125 116.84 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 290.83 119.38 0)
+    (property "Footprint" "Diode_SMD:D_SOD-123" (at 290.83 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 290.83 119.38 0)
+    (property "Datasheet" "https://www.mouser.com/datasheet/2/308/1/MBR130T1_D-2315168.pdf" (at 290.83 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 090bd0b2-02e7-4689-b4f3-63b9e22e1336))
@@ -4679,7 +4923,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "D2") (unit 1)
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -4709,7 +4953,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4728,13 +4972,13 @@
   (symbol (lib_id "Device:C") (at 62.23 252.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4c356920-a9b5-4c81-a442-40b52fef2259)
-    (property "Reference" "C18" (at 60.96 248.92 90)
+    (property "Reference" "C10" (at 60.96 248.92 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "800p" (at 60.96 256.54 90)
+    (property "Value" "820p" (at 60.96 256.54 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 63.1952 256.54 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 63.1952 256.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 62.23 252.73 0)
@@ -4745,7 +4989,48 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C18") (unit 1)
+          (reference "C10") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 83.82 251.46 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 503362b5-bb28-4fcd-bde0-9ad685615a3c)
+    (property "Reference" "R4" (at 86.36 250.825 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10k" (at 86.36 253.365 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 82.042 251.46 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 83.82 251.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e28a4b88-4e50-4de9-b84c-304d54a987df))
+    (pin "2" (uuid dea104be-290d-4840-aa53-74500b0537f0))
+    (instances
+      (project "ASIC_Implementation_NANO-Fiber"
+        (path "/117d1464-2621-4af4-ad0c-88282cc3c779"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "R57") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "R11") (unit 1)
+        )
+      )
+      (project "RP2040_board"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -4775,7 +5060,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4800,7 +5085,7 @@
     (property "Value" "10k" (at 284.48 136.525 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 280.162 134.62 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 280.162 134.62 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 281.94 134.62 0)
@@ -4816,7 +5101,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R15") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4856,7 +5141,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4896,7 +5181,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR053") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -4915,13 +5200,13 @@
   (symbol (lib_id "Device:C") (at 142.24 234.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5701c02a-ef37-4c47-804f-59ec54ba968f)
-    (property "Reference" "C12" (at 140.97 231.14 90)
+    (property "Reference" "C15" (at 140.97 231.14 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 140.97 238.76 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 143.2052 238.76 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 143.2052 238.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 142.24 234.95 0)
@@ -4932,7 +5217,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C12") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
@@ -4941,16 +5226,16 @@
   (symbol (lib_id "Device:D_Schottky") (at 349.25 129.54 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5796cd3f-4a67-4893-814a-f865ad663e90)
-    (property "Reference" "D1" (at 350.52 125.73 0)
+    (property "Reference" "D2" (at 350.52 125.73 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "D_Schottky" (at 350.52 132.08 0)
+    (property "Value" "MBR130T1G" (at 350.52 132.08 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 349.25 129.54 0)
+    (property "Footprint" "Diode_SMD:D_SOD-123" (at 349.25 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 349.25 129.54 0)
+    (property "Datasheet" "https://www.mouser.com/datasheet/2/308/1/MBR130T1_D-2315168.pdf" (at 349.25 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 1266d202-4164-4f65-9da7-1524aad44072))
@@ -4958,7 +5243,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "D1") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -4988,7 +5273,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5007,13 +5292,13 @@
   (symbol (lib_id "Device:C") (at 114.3 193.04 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 59964df7-7907-40e3-94d8-ec58fcda384c)
-    (property "Reference" "C9" (at 116.84 191.77 90)
+    (property "Reference" "C12" (at 116.84 191.77 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470n" (at 110.49 191.77 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 110.49 194.0052 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 110.49 194.0052 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 114.3 193.04 0)
@@ -5024,7 +5309,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C9") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -5054,7 +5339,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5073,13 +5358,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 229.87 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5d3f6bea-a205-45b9-8b09-771e3ae9b613)
-    (property "Reference" "J3" (at 232.41 60.325 0)
+    (property "Reference" "J7" (at 232.41 60.325 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (at 232.41 62.865 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 229.87 60.96 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 229.87 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 229.87 60.96 0)
@@ -5091,7 +5376,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J3") (unit 1)
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -5100,7 +5385,7 @@
   (symbol (lib_id "power:GNDA") (at 300.99 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5f6d2667-7983-4aff-a92e-ebc8683c8ba2)
-    (property "Reference" "#PWR042" (at 300.99 77.47 0)
+    (property "Reference" "#PWR045" (at 300.99 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 300.99 76.2 0)
@@ -5116,7 +5401,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -5146,7 +5431,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5165,13 +5450,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 224.79 185.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 60ae2c3d-0953-4a5f-9235-a0bd9fa9a4e3)
-    (property "Reference" "J11" (at 227.33 184.785 0)
+    (property "Reference" "J6" (at 227.33 184.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (at 227.33 187.325 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 224.79 185.42 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 224.79 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 224.79 185.42 0)
@@ -5183,7 +5468,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J11") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -5192,13 +5477,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 387.35 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 62d8b44e-27e6-4f43-a205-6e002a249477)
-    (property "Reference" "J8" (at 389.89 76.835 0)
+    (property "Reference" "J12" (at 389.89 76.835 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 393.7 85.09 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 387.35 76.2 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 387.35 76.2 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 387.35 76.2 0)
@@ -5209,7 +5494,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J8") (unit 1)
+          (reference "J12") (unit 1)
         )
       )
     )
@@ -5224,7 +5509,7 @@
     (property "Value" "10u" (at 298.45 199.39 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 300.6852 199.39 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 300.6852 199.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 299.72 195.58 0)
@@ -5265,7 +5550,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5284,7 +5569,7 @@
   (symbol (lib_id "power:+3.3VA") (at 379.73 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ccd17ab-b352-4666-9566-75667dda18a8)
-    (property "Reference" "#PWR049" (at 379.73 62.23 0)
+    (property "Reference" "#PWR055" (at 379.73 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3VA" (at 379.73 54.61 0)
@@ -5300,7 +5585,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
     )
@@ -5309,7 +5594,7 @@
   (symbol (lib_id "2024-03-26_04-39-57:S2B-PH-SM4-TB") (at 187.96 201.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6f7e0bad-67f1-45ce-94fe-efcb48d5c977)
-    (property "Reference" "J9" (at 201.93 205.105 0)
+    (property "Reference" "J4" (at 201.93 205.105 0)
       (effects (font (size 1.524 1.524)) (justify left))
     )
     (property "Value" "S2B-PH-SM4-TB" (at 201.93 207.645 0)
@@ -5328,7 +5613,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J9") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -5337,13 +5622,13 @@
   (symbol (lib_id "Device:C") (at 102.87 227.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 741c6d85-d0a8-4978-90bf-e39c5e109f94)
-    (property "Reference" "C5" (at 106.68 226.695 0)
+    (property "Reference" "C11" (at 106.68 226.695 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 106.68 229.235 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 103.8352 231.14 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 103.8352 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 102.87 227.33 0)
@@ -5354,7 +5639,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C5") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
     )
@@ -5363,7 +5648,7 @@
   (symbol (lib_id "TPS7A3901DSCR:TPS7A3901DSCR") (at 285.75 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 77c45d99-bf46-4c20-9185-ade0e2403f9e)
-    (property "Reference" "IC7" (at 300.99 39.37 0)
+    (property "Reference" "IC5" (at 300.99 39.37 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TPS7A3901DSCR" (at 300.99 41.91 0)
@@ -5404,7 +5689,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "IC7") (unit 1)
+          (reference "IC5") (unit 1)
         )
       )
     )
@@ -5413,13 +5698,13 @@
   (symbol (lib_id "Device:C") (at 285.75 195.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7a70423e-1894-4384-9eed-70d8654aa842)
-    (property "Reference" "C28" (at 284.48 191.77 90)
+    (property "Reference" "C26" (at 284.48 191.77 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 284.48 199.39 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 286.7152 199.39 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 286.7152 199.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 285.75 195.58 0)
@@ -5430,7 +5715,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C28") (unit 1)
+          (reference "C26") (unit 1)
         )
       )
     )
@@ -5439,7 +5724,7 @@
   (symbol (lib_id "power:-3V3") (at 379.73 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7a8bb2b2-ac2f-491b-935a-004205bf8bc2)
-    (property "Reference" "#PWR050" (at 379.73 71.12 0)
+    (property "Reference" "#PWR056" (at 379.73 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-3V3" (at 379.73 69.85 0)
@@ -5455,7 +5740,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
     )
@@ -5485,7 +5770,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5510,7 +5795,7 @@
     (property "Value" "5.1k" (at 41.91 57.785 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 41.148 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 41.148 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 39.37 55.88 0)
@@ -5526,7 +5811,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R2") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5545,13 +5830,13 @@
   (symbol (lib_id "Device:C") (at 355.6 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 825e6f19-7d7c-45c0-9207-965dbdc5a7e5)
-    (property "Reference" "C34" (at 354.33 52.07 90)
+    (property "Reference" "C31" (at 354.33 52.07 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 354.33 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 356.5652 59.69 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 356.5652 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 355.6 55.88 0)
@@ -5562,7 +5847,48 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C34") (unit 1)
+          (reference "C31") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 161.29 82.55 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 83c7ac50-9c29-45f7-95aa-f46c3360864e)
+    (property "Reference" "R4" (at 163.83 81.915 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "10k" (at 163.83 84.455 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 159.512 82.55 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 161.29 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e900f945-3444-4660-baee-e5308838323a))
+    (pin "2" (uuid 20980ab3-e7cd-4466-be70-aa327eecce94))
+    (instances
+      (project "ASIC_Implementation_NANO-Fiber"
+        (path "/117d1464-2621-4af4-ad0c-88282cc3c779"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "R60") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "R11") (unit 1)
+        )
+      )
+      (project "RP2040_board"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -5571,13 +5897,13 @@
   (symbol (lib_id "Device:C") (at 152.4 234.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 84d01812-aa70-4d84-ad2a-474f30c20240)
-    (property "Reference" "C14" (at 151.13 231.14 90)
+    (property "Reference" "C19" (at 151.13 231.14 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1u" (at 151.13 238.76 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 153.3652 238.76 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 153.3652 238.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 152.4 234.95 0)
@@ -5588,7 +5914,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C14") (unit 1)
+          (reference "C19") (unit 1)
         )
       )
     )
@@ -5618,7 +5944,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5640,10 +5966,10 @@
     (property "Reference" "R4" (at 124.46 217.805 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "328" (at 124.46 219.71 0)
+    (property "Value" "330" (at 124.46 219.71 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 120.142 218.44 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 120.142 218.44 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 121.92 218.44 0)
@@ -5659,7 +5985,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R5") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5699,7 +6025,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR038") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5739,7 +6065,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR016") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5758,16 +6084,16 @@
   (symbol (lib_id "Device:L") (at 295.91 185.42 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 91ee2688-94c8-4eaf-b763-2de1d5dfde14)
-    (property "Reference" "L3" (at 295.91 181.61 90)
+    (property "Reference" "L1" (at 295.91 181.61 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1uH" (at 295.91 184.15 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 295.91 185.42 0)
+    (property "Footprint" "Inductor_SMD:L_Coilcraft_XAL4020-XXX" (at 295.91 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 295.91 185.42 0)
+    (property "Datasheet" "https://www.mouser.com/ProductDetail/Coilcraft/XFL4020-102MEC?qs=zCSbvcPd3pbaYHL7viZwQA%3D%3D" (at 295.91 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid eb91bb7c-4754-4968-860b-1bba5120d2f5))
@@ -5775,7 +6101,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "L3") (unit 1)
+          (reference "L1") (unit 1)
         )
       )
     )
@@ -5784,7 +6110,7 @@
   (symbol (lib_id "power:GNDA") (at 339.09 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 948b0fdc-c975-4a5a-abf3-7c353c7513ef)
-    (property "Reference" "#PWR047" (at 339.09 91.44 0)
+    (property "Reference" "#PWR050" (at 339.09 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 339.09 90.17 0)
@@ -5800,7 +6126,50 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR050") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 161.29 110.49 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 9a64968e-9279-43f5-a5ac-ffa7d2d8034c)
+    (property "Reference" "#PWR05" (at 161.29 114.3 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 161.29 106.68 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 161.29 110.49 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 161.29 110.49 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid caeabca9-7841-4866-a9b5-1c46f77e90b0))
+    (instances
+      (project "ASIC_Implementation_Connector"
+        (path "/1685d2c4-3512-4986-b3f3-64e634b0e93d"
+          (reference "#PWR05") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6"
+          (reference "#PWR04") (unit 1)
+        )
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "#PWR0105") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_LED"
+        (path "/c7125fbd-eadc-49ca-99e7-eb70f83a9f8f"
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -5815,10 +6184,10 @@
     (property "Value" "4.7uH" (at 302.26 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 302.26 119.38 0)
+    (property "Footprint" "Inductor_SMD:L_0603_1608Metric" (at 302.26 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 302.26 119.38 0)
+    (property "Datasheet" "https://www.mouser.com/datasheet/2/281/1/JELF243B_0033-1634182.pdf" (at 302.26 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 963ff8be-234b-4615-9621-b1e85e5389ea))
@@ -5856,7 +6225,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5866,6 +6235,49 @@
       )
       (project "RP2040_board"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 171.45 76.2 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 9e81b18a-4cba-4117-9020-e30329571c47)
+    (property "Reference" "#PWR05" (at 171.45 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 171.45 72.39 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 171.45 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 171.45 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 68c7590b-6e77-4da5-99ff-1e3561f9df54))
+    (instances
+      (project "ASIC_Implementation_Connector"
+        (path "/1685d2c4-3512-4986-b3f3-64e634b0e93d"
+          (reference "#PWR05") (unit 1)
+        )
+      )
+      (project "Neural_Interface"
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6"
+          (reference "#PWR04") (unit 1)
+        )
+        (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
+          (reference "#PWR0106") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_mechanical"
+        (path "/a5d43f73-1ac8-4c85-8ed3-d33c762384e1"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "ASIC_Implementation_LED"
+        (path "/c7125fbd-eadc-49ca-99e7-eb70f83a9f8f"
           (reference "#PWR01") (unit 1)
         )
       )
@@ -5896,7 +6308,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5921,7 +6333,7 @@
     (property "Value" "10k" (at 328.93 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 324.612 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 324.612 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 326.39 55.88 0)
@@ -5937,7 +6349,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R20") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -5962,7 +6374,7 @@
     (property "Value" "10k" (at 363.22 136.525 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 358.902 134.62 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 358.902 134.62 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 360.68 134.62 0)
@@ -5978,7 +6390,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R13") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6003,7 +6415,7 @@
     (property "Value" "130k" (at 196.85 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 192.532 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 192.532 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 194.31 55.88 0)
@@ -6019,7 +6431,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R10") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6038,13 +6450,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 300.99 143.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a6c2db13-9258-4fba-a2f7-9ab1d2e36f7c)
-    (property "Reference" "J5" (at 303.53 144.145 0)
+    (property "Reference" "J8" (at 303.53 144.145 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 307.34 151.13 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 300.99 143.51 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 300.99 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 300.99 143.51 0)
@@ -6055,7 +6467,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J5") (unit 1)
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -6085,7 +6497,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6104,13 +6516,13 @@
   (symbol (lib_id "Device:C") (at 274.32 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid aab88d0b-02d8-474d-b734-eef6fad2bc18)
-    (property "Reference" "C25" (at 273.05 125.73 90)
+    (property "Reference" "C24" (at 273.05 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 273.05 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 275.2852 133.35 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 275.2852 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 274.32 129.54 0)
@@ -6121,7 +6533,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C25") (unit 1)
+          (reference "C24") (unit 1)
         )
       )
     )
@@ -6130,13 +6542,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 184.15 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid abb66a2e-349f-4eb4-83e0-7b109f0f78d9)
-    (property "Reference" "J2" (at 186.69 145.415 0)
+    (property "Reference" "J3" (at 186.69 145.415 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 186.69 147.955 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 184.15 144.78 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 184.15 144.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 184.15 144.78 0)
@@ -6147,7 +6559,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J2") (unit 1)
+          (reference "J3") (unit 1)
         )
       )
     )
@@ -6177,7 +6589,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6196,13 +6608,13 @@
   (symbol (lib_id "Device:C") (at 144.78 187.96 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b0ebc1d2-f65d-4f4f-98a3-0bf4482f6752)
-    (property "Reference" "C11" (at 147.32 186.69 90)
+    (property "Reference" "C16" (at 147.32 186.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47n" (at 140.97 186.69 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 140.97 188.9252 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 140.97 188.9252 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 144.78 187.96 0)
@@ -6213,7 +6625,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C11") (unit 1)
+          (reference "C16") (unit 1)
         )
       )
     )
@@ -6228,7 +6640,7 @@
     (property "Value" "10k" (at 346.71 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 342.392 55.88 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 342.392 55.88 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 344.17 55.88 0)
@@ -6244,7 +6656,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R19") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6263,13 +6675,13 @@
   (symbol (lib_id "Device:C") (at 339.09 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b525c223-d0f9-4a18-bc49-375888b636a0)
-    (property "Reference" "C33" (at 337.82 76.2 90)
+    (property "Reference" "C29" (at 337.82 76.2 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 337.82 83.82 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 340.0552 83.82 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 340.0552 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 339.09 80.01 0)
@@ -6280,7 +6692,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C33") (unit 1)
+          (reference "C29") (unit 1)
         )
       )
     )
@@ -6334,13 +6746,13 @@
   (symbol (lib_id "Device:C") (at 339.09 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b909d234-170b-48e0-8308-7115357e154b)
-    (property "Reference" "C31" (at 337.82 63.5 90)
+    (property "Reference" "C28" (at 337.82 63.5 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10n" (at 337.82 71.12 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 340.0552 71.12 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 340.0552 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 339.09 67.31 0)
@@ -6351,7 +6763,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C31") (unit 1)
+          (reference "C28") (unit 1)
         )
       )
     )
@@ -6366,7 +6778,7 @@
     (property "Value" "10k" (at 153.67 134.62 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 156.972 133.35 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 156.972 133.35 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 158.75 133.35 0)
@@ -6401,13 +6813,13 @@
   (symbol (lib_id "Device:C") (at 130.81 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c0dd42eb-3e1a-4c90-8aec-bd5bf5e5a524)
-    (property "Reference" "C22" (at 134.62 55.245 0)
+    (property "Reference" "C14" (at 134.62 55.245 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10u" (at 134.62 57.785 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 131.7752 59.69 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 131.7752 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 130.81 55.88 0)
@@ -6418,7 +6830,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C22") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -6427,13 +6839,13 @@
   (symbol (lib_id "Device:C") (at 144.78 200.66 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c1319c93-79ef-46d1-985c-97cb15a1d91f)
-    (property "Reference" "C10" (at 148.59 199.39 90)
+    (property "Reference" "C17" (at 148.59 199.39 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47n" (at 140.97 199.39 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 140.97 201.6252 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 140.97 201.6252 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 144.78 200.66 0)
@@ -6444,7 +6856,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C10") (unit 1)
+          (reference "C17") (unit 1)
         )
       )
     )
@@ -6453,13 +6865,13 @@
   (symbol (lib_id "Device:C") (at 267.97 62.23 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c34655d4-7a6f-41c6-a974-18f16732cb04)
-    (property "Reference" "C30" (at 266.7 58.42 90)
+    (property "Reference" "C23" (at 266.7 58.42 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 266.7 66.04 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 268.9352 66.04 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 268.9352 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 267.97 62.23 0)
@@ -6470,7 +6882,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C30") (unit 1)
+          (reference "C23") (unit 1)
         )
       )
     )
@@ -6500,7 +6912,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6519,13 +6931,13 @@
   (symbol (lib_id "Device:C") (at 147.32 234.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c94d862d-81b7-45bd-991e-cb8743bf55a7)
-    (property "Reference" "C13" (at 146.05 231.14 90)
+    (property "Reference" "C18" (at 146.05 231.14 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 146.05 238.76 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 148.2852 238.76 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 148.2852 238.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 147.32 234.95 0)
@@ -6536,7 +6948,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C13") (unit 1)
+          (reference "C18") (unit 1)
         )
       )
     )
@@ -6551,7 +6963,7 @@
     (property "Value" "28k" (at 328.93 67.945 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 324.612 66.04 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 324.612 66.04 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 326.39 66.04 0)
@@ -6567,7 +6979,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R21") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6586,13 +6998,13 @@
   (symbol (lib_id "Device:C") (at 55.88 227.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cbf4f4a2-cf0a-4427-ac68-0fa70f0d25ca)
-    (property "Reference" "C15" (at 54.61 223.52 90)
+    (property "Reference" "C8" (at 54.61 223.52 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100n" (at 54.61 231.14 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 56.8452 231.14 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 56.8452 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 55.88 227.33 0)
@@ -6603,7 +7015,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C15") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -6612,13 +7024,13 @@
   (symbol (lib_id "Device:C") (at 62.23 227.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ccd4ebd2-62f1-4828-a0f1-d74178162917)
-    (property "Reference" "C16" (at 60.96 223.52 90)
+    (property "Reference" "C9" (at 60.96 223.52 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10n" (at 60.96 231.14 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 63.1952 231.14 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 63.1952 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 62.23 227.33 0)
@@ -6629,7 +7041,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C16") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -6659,7 +7071,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR054") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6678,7 +7090,7 @@
   (symbol (lib_id "power:GNDA") (at 344.17 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d514366a-8dfb-4eb8-bb79-7dd43d6080fc)
-    (property "Reference" "#PWR046" (at 344.17 67.31 0)
+    (property "Reference" "#PWR051" (at 344.17 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 344.17 66.04 0)
@@ -6694,7 +7106,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -6724,7 +7136,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6743,13 +7155,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 323.85 143.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dc1abf5b-5b5e-4564-b6f5-b3736698a589)
-    (property "Reference" "J6" (at 326.39 144.145 0)
+    (property "Reference" "J9" (at 326.39 144.145 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 330.2 152.4 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 323.85 143.51 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 323.85 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 323.85 143.51 0)
@@ -6760,7 +7172,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J6") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -6769,13 +7181,13 @@
   (symbol (lib_id "Device:C") (at 52.07 215.9 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid de137824-a493-41d0-acd9-c8af8ee2805d)
-    (property "Reference" "C7" (at 54.61 214.63 90)
+    (property "Reference" "C6" (at 54.61 214.63 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10nf" (at 48.26 214.63 90)
+    (property "Value" "10n" (at 48.26 214.63 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 48.26 216.8652 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 48.26 216.8652 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 52.07 215.9 0)
@@ -6786,7 +7198,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C7") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -6801,7 +7213,7 @@
     (property "Value" "17.8k" (at 346.71 45.085 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 342.392 43.18 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 342.392 43.18 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 344.17 43.18 0)
@@ -6817,7 +7229,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R18") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6857,7 +7269,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6876,13 +7288,13 @@
   (symbol (lib_id "Device:C") (at 355.6 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dff253ac-7373-41e5-81f4-ba54b885ed27)
-    (property "Reference" "C32" (at 354.33 39.37 90)
+    (property "Reference" "C30" (at 354.33 39.37 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10n" (at 354.33 46.99 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 356.5652 46.99 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 356.5652 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 355.6 43.18 0)
@@ -6893,7 +7305,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C32") (unit 1)
+          (reference "C30") (unit 1)
         )
       )
     )
@@ -6902,13 +7314,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 387.35 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e139b435-d76e-4060-8f25-e114e5f48490)
-    (property "Reference" "J7" (at 389.89 61.595 0)
+    (property "Reference" "J11" (at 389.89 61.595 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 393.7 69.85 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 387.35 60.96 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 387.35 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 387.35 60.96 0)
@@ -6919,7 +7331,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J7") (unit 1)
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -6934,7 +7346,7 @@
     (property "Value" "5.1k" (at 86.36 59.055 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 82.042 57.15 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 82.042 57.15 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 83.82 57.15 0)
@@ -6950,7 +7362,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R3") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -6969,13 +7381,13 @@
   (symbol (lib_id "Device:C") (at 214.63 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e342a916-eca5-4b6f-acb0-a24dda959fce)
-    (property "Reference" "C19" (at 213.36 125.73 90)
+    (property "Reference" "C22" (at 213.36 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "2.2u" (at 213.36 133.35 90)
+    (property "Value" "10u" (at 213.36 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 215.5952 133.35 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 215.5952 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 214.63 129.54 0)
@@ -6986,7 +7398,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C19") (unit 1)
+          (reference "C22") (unit 1)
         )
       )
     )
@@ -6998,10 +7410,10 @@
     (property "Reference" "R4" (at 363.22 123.825 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "90k" (at 363.22 126.365 0)
+    (property "Value" "90.9k" (at 363.22 126.365 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 358.902 124.46 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 358.902 124.46 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 360.68 124.46 0)
@@ -7017,7 +7429,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R12") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7036,13 +7448,13 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 67.31 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ed8f0776-dba8-4bc3-ae86-fe4d192f2f47)
-    (property "Reference" "J1" (at 69.85 140.335 0)
+    (property "Reference" "J2" (at 69.85 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (at 69.85 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 67.31 140.97 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 67.31 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 67.31 140.97 0)
@@ -7054,7 +7466,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "J1") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -7084,7 +7496,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7124,7 +7536,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7143,13 +7555,13 @@
   (symbol (lib_id "Device:C") (at 373.38 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f043f856-a9ed-477c-be31-c70d4746fb2e)
-    (property "Reference" "C24" (at 372.11 125.73 90)
+    (property "Reference" "C33" (at 372.11 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10u" (at 372.11 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 374.3452 133.35 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 374.3452 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 373.38 129.54 0)
@@ -7160,7 +7572,7 @@
     (instances
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "C24") (unit 1)
+          (reference "C33") (unit 1)
         )
       )
     )
@@ -7190,7 +7602,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR041") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7230,7 +7642,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7270,7 +7682,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7295,7 +7707,7 @@
     (property "Value" "1u" (at 215.9 52.705 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 213.0552 54.61 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 213.0552 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 212.09 50.8 0)
@@ -7318,10 +7730,10 @@
     (property "Reference" "R4" (at 276.86 191.135 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "450k" (at 276.86 193.675 0)
+    (property "Value" "453k" (at 276.86 193.675 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 272.542 191.77 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 272.542 191.77 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 274.32 191.77 0)
@@ -7337,7 +7749,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "R17") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7389,7 +7801,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "U2") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
@@ -7429,7 +7841,7 @@
       )
       (project "Neural_Interface"
         (path "/63071661-64c0-4f04-89ae-d8c96a5a79b6/9fd13525-561e-4057-9645-8cde755c60ca"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
       (project "ASIC_Implementation_mechanical"
