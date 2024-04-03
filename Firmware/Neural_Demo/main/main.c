@@ -4,7 +4,7 @@
 //#include <driver/dedic_gpio.h>
 //#include <driver/gpio_filter.h>
 
-#include <esp32s2/rom/gpio.h>
+//#include <esp32s2/rom/gpio.h>
 #include <gpio.h>
 
 
@@ -35,10 +35,6 @@
 #define MCP3464_SCK     9
 #define MCP3463_CS      10
 
-//******************Function Definitions******************
-void gpio_init(uint8_t pin, uint8_t function);
-uint8_t gpio_read(uint8_t pin);
-
 void app_main(void)
 {
 
@@ -46,6 +42,7 @@ void app_main(void)
 
     while(1){
 
+        
 
     }
 
