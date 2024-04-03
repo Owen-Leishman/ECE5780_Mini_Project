@@ -90,9 +90,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "")
+      (outputdirectory "NSD_V1-0/")
     )
   )
 
@@ -10837,9 +10837,9 @@
       (stroke (width 0.1) (type solid)) (layer "F.Fab") (tstamp 9855504d-550d-4026-aae8-dd141e4cff51))
     (fp_line (start 1.6 0.8) (end -1.6 0.8)
       (stroke (width 0.1) (type solid)) (layer "F.Fab") (tstamp 71ef0f31-49a5-4ff2-a200-422ac894ada0))
-    (pad "1" smd roundrect (at -1.475 0 180) (size 1.15 1.8) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.217391)
+    (pad "1" smd roundrect (at -1.475 0 180) (size 1.15 1.8) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2173913043)
       (net 7 "COIL+") (pintype "passive") (tstamp 656f2caf-56d9-4204-a652-d88c15b606ca))
-    (pad "2" smd roundrect (at 1.475 0 180) (size 1.15 1.8) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.217391)
+    (pad "2" smd roundrect (at 1.475 0 180) (size 1.15 1.8) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2173913043)
       (net 6 "AC1") (pintype "passive") (tstamp d6abb603-dd18-4e91-9072-9f02d240fd3a))
     (model "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.wrl"
       (offset (xyz 0 0 0))
