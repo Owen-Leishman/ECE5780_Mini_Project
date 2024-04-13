@@ -36,8 +36,11 @@
 
 //****************Other Definitions*******************
 
+// I2C
 #define PORT_NUMBER -1
-#define I2C_CLK_FREQ 100000    
+#define I2C_CLK_FREQ 400000    
+
+
 
 static const char *TAG = "MAIN";
 
@@ -65,7 +68,7 @@ void app_main(void)
         .dr_al_select = 0,
         .mode = 0,
         .scl_speed_hz = I2C_CLK_FREQ,
-        .timeout_ms = 500,
+        .timeout_ms = -1,
     };
 
     tmp117_handle_t tmp117_handle;
@@ -76,12 +79,12 @@ void app_main(void)
 
     ESP_LOGI(TAG, "tmp117 conversion rate: %d", conversion_rate);
     
-    int16_t current_temperature;
+    uint16_t current_temperature;
 
     while(1){
       
-        ESP_ERROR_CHECK_WITHOUT_ABORT(tmp117_read_temp_raw(tmp117_handle, &current_temperature));
-        ESP_LOGI(TAG, "temperature = %d", tmp117_convert_to_c(current_temperature));
+        ESP_ERROR_CHECK_WITHOUT_ABORT(tmp117_read_temp_raw_blocking(tmp117_handle, &current_temperature));
+        ESP_LOGI(TAG, "temperature = %d", tmp117_convert_to_mc(current_temperature));
 
     }
 

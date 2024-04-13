@@ -95,7 +95,7 @@ esp_err_t tmp117_init(i2c_master_bus_handle_t i2c, tmp117_conf_t *config, tmp117
 
     uint8_t config_high = (config->mode << 3)|(config->mode << 2)|(conversion_map >> 1);
     uint8_t config_low = (conversion_map << 7)|(average_map << 5)|(config->alert_mode << 4)|(config->alert_polarity << 3)|(config->dr_al_select << 2) ;
-    uint8_t tmp117_configuration[] = {(uint8_t) TMP117_CONFIG, config_high, config_low};
+    const uint8_t tmp117_configuration[] = {(uint8_t) TMP117_CONFIG, config_high, config_low};
 
     tmp117_handle_t out_handle;
     out_handle  = (tmp117_handle_t)calloc(1, sizeof(tmp117_handle_t));
@@ -111,11 +111,14 @@ esp_err_t tmp117_init(i2c_master_bus_handle_t i2c, tmp117_conf_t *config, tmp117
     }
 
     out_handle->timeout_ms = config->timeout_ms;
-
     out_handle->buffer = (uint8_t*)calloc(1, TMP117_MAX_COMMAND_LEN);
     ESP_GOTO_ON_FALSE(out_handle->buffer, ESP_ERR_NO_MEM, err, TAG, "no memory for i2c output buffer");
 
-    ESP_GOTO_ON_FALSE(tmp117_write(out_handle, &tmp117_configuration, 3), ESP_ERR_INVALID_RESPONSE, err, TAG, "could not communicate with TMP117");
+    *tmp117_handle = out_handle;
+
+    ESP_ERROR_CHECK(tmp117_write(out_handle, tmp117_configuration, 3));
+
+    ESP_LOGI(TAG, "initialization complete");
 
     return ESP_OK;
 
@@ -128,6 +131,8 @@ err:
     free(out_handle);
     return ret;
 
+    ESP_LOGE(TAG, "error configuring temperature");
+
 }
 
 /**
@@ -138,9 +143,9 @@ err:
  * @param size the length of the data array
  * @return esp_err_t 
  */
-esp_err_t tmp117_write(tmp117_handle_t tmp117_handle, uint8_t *data, uint8_t size){
+esp_err_t tmp117_write(tmp117_handle_t tmp117_handle, const uint8_t *data, uint8_t size){
 
-    return  i2c_master_transmit(tmp117_handle->i2c_dev, tmp117_handle->buffer, size, tmp117_handle->timeout_ms);
+    return  i2c_master_transmit(tmp117_handle->i2c_dev, data, size, tmp117_handle->timeout_ms);
 
 }
 
@@ -156,7 +161,7 @@ esp_err_t tmp117_write(tmp117_handle_t tmp117_handle, uint8_t *data, uint8_t siz
  */
 esp_err_t tmp117_read(tmp117_handle_t tmp117_handle, uint8_t addr, uint8_t *data, uint8_t size){
 
-    return i2c_master_transmit_receive(tmp117_handle->i2c_dev, addr, 1, data, size, tmp117_handle->timeout_ms);
+    return i2c_master_transmit_receive(tmp117_handle->i2c_dev, &addr, 1, data, size, tmp117_handle->timeout_ms);
 
     
 }
@@ -174,7 +179,7 @@ esp_err_t tmp117_data_available(tmp117_handle_t tmp117_handle, bool *data_availa
     uint8_t data[2];
 
 
-    ESP_RETURN_ON_ERROR(tmp117_read(tmp117_handle, &config_addr,  data, 2), TAG, "could not communicate with TMP117");
+    ESP_RETURN_ON_ERROR(tmp117_read(tmp117_handle, config_addr,  data, 2), TAG, "could not communicate with TMP117");
 
     if((data[0] & TMP117_DR) != 0){
         *data_available = 1;
@@ -193,17 +198,39 @@ esp_err_t tmp117_data_available(tmp117_handle_t tmp117_handle, bool *data_availa
  * @param temperature the raw temperature
  * @return esp_err_t 
  */
-esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, int16_t *temperature){
+esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, uint16_t *temperature){
     uint8_t data[2];
     uint8_t temp_addr = TMP117_TEMP;
 
 
-    ESP_RETURN_ON_ERROR(tmp117_read(tmp117_handle,&temp_addr, data, 2), TAG, "could not communicate with TMP117");
+    ESP_RETURN_ON_ERROR(tmp117_read(tmp117_handle, temp_addr, data, 2), TAG, "could not communicate with TMP117");
 
     *temperature = (data[0] << 8) | data[1];
 
     return ESP_OK;
 }
+
+esp_err_t tmp117_read_temp_raw_blocking(tmp117_handle_t tmp117_handle, uint16_t *temperature){
+    uint8_t data[2];
+    uint8_t temp_addr = TMP117_TEMP;
+
+    bool data_available;
+
+    while(true){
+        ESP_RETURN_ON_ERROR(tmp117_data_available(tmp117_handle, &data_available), TAG, "could not communicate with TMP117");
+
+        if(data_available){
+            ESP_RETURN_ON_ERROR(tmp117_read(tmp117_handle, temp_addr, data, 2), TAG, "could not communicate with TMP117");
+            break;
+        }
+
+    }
+
+    *temperature = (data[0] << 8) | data[1];
+
+    return ESP_OK;
+}
+
 
 /**
  * @brief convert raw temperature reading to degrees c
@@ -211,8 +238,16 @@ esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, int16_t *temperatu
  * @param raw_temperature tmp117 raw temperature reading
  * @return int16_t the temperature in c
  */
-int16_t tmp117_convert_to_c(int16_t raw_temperature){
-    return (raw_temperature * 78125)/1000;
+int16_t tmp117_convert_to_c(uint16_t raw_temperature){
+    if(raw_temperature & (0b1 <<15)){
+
+        return ((~raw_temperature) >> 7);
+    
+    }else{
+        
+        return ((raw_temperature) >> 7);
+
+    }    
 }
 
 /**
@@ -221,6 +256,14 @@ int16_t tmp117_convert_to_c(int16_t raw_temperature){
  * @param raw_temperature tmp117 raw temperature reading
  * @return int16_t the temperature in mc
  */
-int16_t tmp117_convert_to_mc(int16_t raw_temperature){
-    return raw_temperature * 78125;
+int16_t tmp117_convert_to_mc(uint16_t raw_temperature){
+    if(raw_temperature & (0b1 <<  15)){
+
+        return ((~raw_temperature) * 78125)/1000;
+    
+    }else{
+        
+        return ((raw_temperature & ~(0b1 <<  15)) * 78125)/1000;
+
+    }    
 }

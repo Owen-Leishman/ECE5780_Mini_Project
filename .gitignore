@@ -3,4 +3,5 @@ Power_dist.ai
 analog_frontend.ai
 Hardware/components/
 Firmware/Neural_Demo/build/
-Hardware/Neural_Interface-backups
+
+/Hardware/Neural_Interface-backups/

@@ -31,12 +31,13 @@ typedef struct tmp117_t tmp117_t;
 typedef struct tmp117_t *tmp117_handle_t;
 
 esp_err_t tmp117_init(i2c_master_bus_handle_t i2c, tmp117_conf_t *config, tmp117_handle_t *tmp117_handle, int *actual_conversion);
-esp_err_t tmp117_write(tmp117_handle_t tmp117_handle, uint8_t *data, uint8_t size);
+esp_err_t tmp117_write(tmp117_handle_t tmp117_handle, const uint8_t *data, uint8_t size);
 esp_err_t tmp117_read(tmp117_handle_t tmp117_handle, uint8_t addr, uint8_t *data, uint8_t size);
 esp_err_t tmp117_data_available(tmp117_handle_t tmp117_handle, bool *data_available);
-esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, int16_t *temperature);
-int16_t tmp117_convert_to_c(int16_t raw_temperature);
-int16_t tmp117_convert_to_mc(int16_t raw_temperature);
+esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, uint16_t *temperature);
+esp_err_t tmp117_read_temp_raw_blocking(tmp117_handle_t tmp117_handle, uint16_t *temperature);
+int16_t tmp117_convert_to_c(uint16_t raw_temperature);
+int16_t tmp117_convert_to_mc(uint16_t raw_temperature);
 
 #ifdef __cplusplus
 }
