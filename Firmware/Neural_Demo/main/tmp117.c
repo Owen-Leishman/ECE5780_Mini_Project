@@ -210,6 +210,13 @@ esp_err_t tmp117_read_temp_raw(tmp117_handle_t tmp117_handle, uint16_t *temperat
     return ESP_OK;
 }
 
+/**
+ * @brief polls the TMP117 until new data is available and then reads it
+ * 
+ * @param tmp117_handle the device handle for the TMP117
+ * @param temperature the raw temperature
+ * @return esp_err_t 
+ */
 esp_err_t tmp117_read_temp_raw_blocking(tmp117_handle_t tmp117_handle, uint16_t *temperature){
     uint8_t data[2];
     uint8_t temp_addr = TMP117_TEMP;
@@ -251,7 +258,7 @@ int16_t tmp117_convert_to_c(uint16_t raw_temperature){
 }
 
 /**
- * @brief convert raw temperature reading to milli-degrees c
+ * @brief convert raw temperature reading to milli-degrees c !CURRENTLY BROKEN!
  * 
  * @param raw_temperature tmp117 raw temperature reading
  * @return int16_t the temperature in mc
@@ -259,11 +266,11 @@ int16_t tmp117_convert_to_c(uint16_t raw_temperature){
 int16_t tmp117_convert_to_mc(uint16_t raw_temperature){
     if(raw_temperature & (0b1 <<  15)){
 
-        return ((~raw_temperature) * 78125)/1000;
+        return ((~((uint32_t)raw_temperature)) * 78125)/1000;
     
     }else{
         
-        return ((raw_temperature & ~(0b1 <<  15)) * 78125)/1000;
+        return (((uint32_t)raw_temperature & ~(0b1 <<  15)) * 78125)/1000;
 
     }    
 }
