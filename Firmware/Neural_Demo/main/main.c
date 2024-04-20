@@ -2,7 +2,9 @@
 #include "esp_log.h"
 #include "esp_check.h"
 #include "driver/gpio.h"
-
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/queue.h"
 
 // Local includes
 #include "tmp117.h"
@@ -43,7 +45,7 @@
 #define I2C_CLK_FREQ 400000    
 
 #define SPI_HOST 1
-#define SPI_CLK_FREQ 10000000
+#define SPI_CLK_FREQ 20000000
 
 static const char *TAG = "MAIN";
 
@@ -55,7 +57,6 @@ void app_main(void)
     gpio_set_direction(HIGH_VOLTAGE_EN, GPIO_MODE_OUTPUT);
     gpio_set_level(HIGH_VOLTAGE_EN, 1);
 
-    esp_err_t ret;
 
     ESP_LOGI(TAG, "Initializing bus SPI%d...", SPI_HOST + 1);
 
@@ -83,14 +84,30 @@ void app_main(void)
     ESP_LOGI(TAG, "Initializing MCP3464...");
     ESP_ERROR_CHECK(mcp3464_init(&mcp3464_conf, &mcp3464_handle));
 
+    
+
     ESP_LOGI(TAG, "Initialization Complete");
 
     uint16_t adc_val;
 
+    mcp3464_start_conversion(mcp3464_handle);
+
+
     while(1){
-        vTaskDelay(10);
-        ESP_ERROR_CHECK(mcp3464_adc_read_raw(mcp3464_handle, &adc_val));
-        ESP_LOGI(TAG, "ADC Val: %d", adc_val);
+        
+        //vTaskDelay(1/portTICK_PERIOD_MS);
+        //ESP_ERROR_CHECK(mcp3464_adc_read_raw(mcp3464_handle, &adc_val));
+        //ESP_LOGI(TAG, "ADC Val: %d", adc_val);
+   
+        //if(xQueueReceive(mcp_data_queue, &adc_val, portMAX_DELAY)){
+        //    ESP_LOGI(TAG, "ADC Val: %d", adc_val);
+        //}
+        
+
+        if(xQueueReceive(mcp3464_handle->irq_queue, &adc_val, portMAX_DELAY)){
+            ESP_LOGI(TAG, "ADC Val: %d", adc_val);
+        }
+
     }
 
 
