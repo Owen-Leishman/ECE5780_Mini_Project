@@ -57,8 +57,14 @@ static const char *TAG = "MCP3464";
  */
 static void mcp3464_irq(void* arg){
     mcp3464_context_t* ctx = arg;
-    uint16_t data;
+    uint32_t data;
     mcp3464_adc_read_raw(ctx, &data);
+
+//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // chan 0
+//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00011011); // chan 1
+//   mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00101011); // chan 2
+//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00111011); // chan 3
+
     mcp3464_start_conversion(ctx);
     xQueueSendFromISR(ctx->irq_queue, &data, NULL);
 
@@ -72,6 +78,8 @@ static void mcp3464_irq(void* arg){
  * @return esp_err_t 
  */
 esp_err_t mcp3464_init(mcp3464_conf_t *cfg, mcp3464_context_t** out_ctx){
+
+    ESP_LOGI(TAG, "Initializing MCP3464...");
 
     esp_err_t err = ESP_OK;
 
@@ -105,7 +113,7 @@ esp_err_t mcp3464_init(mcp3464_conf_t *cfg, mcp3464_context_t** out_ctx){
     // Write configuration
     mcp3464_write(ctx, MCP3464_CONFIG0_ADDR, 0b10100010); // Set VREF to external, clock to internal, no current source, and ADC standby mode
     mcp3464_write(ctx, MCP3464_CONFIG1_ADDR, 0b11001100); // set conversion period
-    mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b10001001); // sets adc gain
+    mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b10101001); // sets adc gain to 16x
     mcp3464_write(ctx, MCP3464_CONFIG3_ADDR, 0b10000000);
     mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // sets VIN+ to channel 0 and VIN- to VREF+
     mcp3464_write(ctx, MCP3464_IRQ_ADDR, 0b00000110);
@@ -149,17 +157,13 @@ esp_err_t mcp3464_init(mcp3464_conf_t *cfg, mcp3464_context_t** out_ctx){
     }
 
 
-    ctx->irq_queue = xQueueCreate(10, sizeof(uint16_t));
-
-
+    
+    // Create queue to allow interupt to transmit data
+    ctx->irq_queue = xQueueCreate(100, sizeof(uint32_t));
 
     // Initialize IRQ interupt
     ESP_LOGI(TAG, "Initializeing interrupt");
     gpio_reset_pin(MCP3464_IRQ);
-    //gpio_set_direction(MCP3464_IRQ, GPIO_MODE_INPUT);
-    //gpio_set_intr_type(MCP3464_IRQ, GPIO_INTR_NEGEDGE); // set interupt to falling edge
-
-    //gpio_isr_handle_t mcp_irq;
 
     gpio_config_t irq_pin = {
         .intr_type = GPIO_INTR_NEGEDGE,
@@ -173,7 +177,7 @@ esp_err_t mcp3464_init(mcp3464_conf_t *cfg, mcp3464_context_t** out_ctx){
     gpio_install_isr_service(ESP_INTR_FLAG_LEVEL3);
     gpio_isr_handler_add(MCP3464_IRQ, mcp3464_irq, (void*) ctx);
 
-    //gpio_intr_enable(MCP3464_IRQ);
+    ESP_LOGI(TAG, "MCP3464 initialization complete");
 
     *out_ctx = ctx;
     return ESP_OK;
@@ -317,7 +321,7 @@ esp_err_t mcp3464_read(mcp3464_context_t* ctx, uint8_t addr, uint32_t* data, uin
  * @param data adc reading
  * @return esp_err_t 
  */
-esp_err_t mcp3464_adc_read_raw(mcp3464_context_t* ctx, uint16_t* data){
+esp_err_t mcp3464_adc_read_raw(mcp3464_context_t* ctx, uint32_t* data){
 
     spi_transaction_t t = {
         .cmd = (MCP3464_ADDR << 6) | MCP3464_INCREMENTAL_READ,
@@ -332,7 +336,8 @@ esp_err_t mcp3464_adc_read_raw(mcp3464_context_t* ctx, uint16_t* data){
         return err;
     }
 
-    *data = t.rx_data[0];
+    //*data = (t.rx_data[3] << 24) | (t.rx_data[2] << 16) | (t.rx_data[1] << 8) | t.rx_data[0];
+        *data = (t.rx_data[1] << 8) | t.rx_data[0];
     return ESP_OK;    
 
 }

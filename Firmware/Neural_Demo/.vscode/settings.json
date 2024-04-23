@@ -19,6 +19,7 @@
     "files.associations": {
         "bitset": "c",
         "string_view": "c",
-        "regex": "c"
+        "regex": "c",
+        "sockets.h": "c"
     }
 }
