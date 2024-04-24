@@ -21,6 +21,7 @@ extern "C" {
 #endif
 
 void udp_client_task(void *pvParameters);
+void udp_recieve_task(void *pvParameters);
 
 #ifdef __cplusplus
 }

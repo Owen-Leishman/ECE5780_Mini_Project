@@ -20,6 +20,8 @@
         "bitset": "c",
         "string_view": "c",
         "regex": "c",
-        "sockets.h": "c"
+        "sockets.h": "c",
+        "dac_continuous.h": "c",
+        "stdint.h": "c"
     }
 }

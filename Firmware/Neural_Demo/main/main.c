@@ -74,12 +74,11 @@ void app_main(void)
 
     wifiInit();
 
-    // Make suree current output is set to zero by default
+    // Make sure current output is set to zero by default
     gpio_reset_pin(STIM_P);
     gpio_set_direction(STIM_P, GPIO_MODE_OUTPUT);
     gpio_set_level(STIM_P, 0);
 
-    // Make suree current output is set to zero by default
     gpio_reset_pin(STIM_N);
     gpio_set_direction(STIM_N, GPIO_MODE_OUTPUT);
     gpio_set_level(STIM_N, 0);
@@ -158,6 +157,8 @@ void app_main(void)
     // Start first conversion, interrupt starts conversions afterwards
     mcp3464_start_conversion(mcp3464_handle);
 
+    xTaskCreate(udp_recieve_task, "udp_client", 4096, NULL, 5, NULL);
+
     while(1){
 
         payload[0] = 'S';
@@ -182,7 +183,7 @@ void app_main(void)
         payload[1] = current_temperature >> 8;
         payload[2] = current_temperature;
 
-        xTaskCreate(udp_client_task, "udp_client", 4096, &payload, 5, NULL);
+        xTaskCreate(udp_client_task, "udp_client", 4096, &payload, 5, NULL); //////////
 
         //vTaskDelay(TRANSMIT_PERIOD_MS / portTICK_PERIOD_MS);
 
