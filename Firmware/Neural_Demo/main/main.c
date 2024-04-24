@@ -39,6 +39,11 @@
 #define MCP3464_SCK     9
 #define MCP3464_CS      10
 
+#define MCP3464_CHANNEL_0       0b0000
+#define MCP3464_CHANNEL_1       0b0001
+#define MCP3464_CHANNEL_2       0b0010
+#define MCP3464_CHANNEL_3       0b0011
+
 //****************Other Definitions*******************
 
 // I2C
@@ -164,12 +169,51 @@ void app_main(void)
         payload[0] = 'S';
 
         int samples = 0;
+        int channel_0_samples = 0;
+        int channel_1_samples = 0;
+        int channel_2_samples = 0;
+        int channel_3_samples = 0;
+
         while(samples < PAYLOAD_SAMPLES){
             if(xQueueReceive(mcp3464_handle->irq_queue, &adc_val, portMAX_DELAY)){
-                //ESP_LOGI(TAG, "ADC Val: %d", (int16_t) adc_val);
-                payload[3 + (samples * 2)]      = adc_val >> 8;
-                payload[3 + (samples * 2) + 1]  = adc_val;
-                samples += 1;
+                uint8_t channel = (adc_val >> 24) & 0b1111;
+                
+                if((samples == 0) && (channel != MCP3464_CHANNEL_0)){
+                    channel = 200;
+                }
+
+                switch(channel){
+                    case MCP3464_CHANNEL_0:
+                        ESP_LOGI(TAG,"ADC channel 0 Reading: %d", (uint16_t)(adc_val & 0b1111111111111111));
+                        payload[3 + (channel_0_samples * 2)]      = adc_val >> 8;
+                        payload[3 + (channel_0_samples * 2) + 1]  = adc_val;
+                        channel_0_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_1:
+                        payload[3 + (PAYLOAD_SAMPLES/ 2) + (channel_1_samples * 2)]      = adc_val >> 8;
+                        payload[3 + (PAYLOAD_SAMPLES/ 2) + (channel_1_samples * 2) + 1]  = adc_val;
+                        channel_1_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_2:
+                        payload[3 + 2 * (PAYLOAD_SAMPLES/ 2) + (channel_2_samples * 2)]      = adc_val >> 8;
+                        payload[3 + 2 * (PAYLOAD_SAMPLES/ 2) + (channel_2_samples * 2) + 1]  = adc_val;
+                        channel_2_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_3:
+                        
+                        payload[3 + 3 * (PAYLOAD_SAMPLES/ 2) + (channel_3_samples * 2)]      = adc_val >> 8;
+                        payload[3 + 3 * (PAYLOAD_SAMPLES/ 2) + (channel_3_samples * 2) + 1]  = adc_val;
+                        channel_3_samples += 1;
+                        samples += 1;
+                        break;
+                    default:
+                        ESP_LOGE(TAG,"Unexpected ADC channel");
+                }
+
+                
             }
         }
 
@@ -177,15 +221,15 @@ void app_main(void)
         payload[PAYLOAD_LENGTH - 1] =  '\n';
 
         ESP_ERROR_CHECK_WITHOUT_ABORT(tmp117_read_temp_raw_blocking(tmp117_handle, &current_temperature));
-        ESP_LOGI(TAG, "temperature = %d", tmp117_convert_to_c(current_temperature));
+        //ESP_LOGI(TAG, "temperature = %d", tmp117_convert_to_c(current_temperature));
 
         
         payload[1] = current_temperature >> 8;
         payload[2] = current_temperature;
 
-        xTaskCreate(udp_client_task, "udp_client", 4096, &payload, 5, NULL); //////////
+        xTaskCreate(udp_client_task, "udp_client", 4096, &payload, 5, NULL); 
 
-        //vTaskDelay(TRANSMIT_PERIOD_MS / portTICK_PERIOD_MS);
+
 
     }
 

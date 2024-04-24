@@ -8,6 +8,7 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "mcp3464.h"
+#include "esp_adc/adc_oneshot.h"
 
 #define MCP3464_MCLK    5
 #define MCP3464_IRQ     6
@@ -48,7 +49,13 @@
 #define MCP3464_CHANNEL_2       0b0010
 #define MCP3464_CHANNEL_3       0b0011
 
+
+
+
+
 static const char *TAG = "MCP3464";
+
+volatile static uint8_t channel = 0;
 
 /**
  * @brief MCP3464 IQR handler
@@ -60,10 +67,40 @@ static void mcp3464_irq(void* arg){
     uint32_t data;
     mcp3464_adc_read_raw(ctx, &data);
 
-//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // chan 0
-//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00011011); // chan 1
-//   mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00101011); // chan 2
-//    mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00111011); // chan 3
+    switch(channel){
+        case MCP3464_CHANNEL_0:
+            mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b11101001); // sets adc gain to 16x
+            mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00011011); // chan 1
+            channel = 1;
+            data |= MCP3464_CHANNEL_0 << 24;
+            break;
+
+        case MCP3464_CHANNEL_1:
+            mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b11101001); // sets adc gain to 16x
+            mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00101011); // chan 2
+            channel = 2;
+            data |= MCP3464_CHANNEL_1 << 24;
+            break;
+
+        case MCP3464_CHANNEL_2:
+            mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b11001001); // sets adc gain to 1x
+            mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00111011); // chan 3
+            channel = 3;
+            data |= MCP3464_CHANNEL_2 << 24;
+            break;
+
+        case MCP3464_CHANNEL_3:
+            mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b11101001); // sets adc gain to 16x
+            mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // chan 0
+            data |= MCP3464_CHANNEL_3 << 24;
+            channel = 0;
+            break; 
+
+        default:
+            mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b11101001); // sets adc gain to 16x
+            mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // chan 0
+            channel = 0;
+    }
 
     mcp3464_start_conversion(ctx);
     xQueueSendFromISR(ctx->irq_queue, &data, NULL);
@@ -112,9 +149,9 @@ esp_err_t mcp3464_init(mcp3464_conf_t *cfg, mcp3464_context_t** out_ctx){
 
     // Write configuration
     mcp3464_write(ctx, MCP3464_CONFIG0_ADDR, 0b10100010); // Set VREF to external, clock to internal, no current source, and ADC standby mode
-    mcp3464_write(ctx, MCP3464_CONFIG1_ADDR, 0b11001100); // set conversion period
-    mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b10101001); // sets adc gain to 16x
-    mcp3464_write(ctx, MCP3464_CONFIG3_ADDR, 0b10000000);
+    mcp3464_write(ctx, MCP3464_CONFIG1_ADDR, 0b11001100); // set conversion period  ,0b00010100
+    mcp3464_write(ctx, MCP3464_CONFIG2_ADDR, 0b10001001); // sets adc gain to 16x , 0b11101001
+    mcp3464_write(ctx, MCP3464_CONFIG3_ADDR, 0b10000000); // set data format to 32 bit
     mcp3464_write(ctx, MCP3464_MUX_ADDR, 0b00001011); // sets VIN+ to channel 0 and VIN- to VREF+
     mcp3464_write(ctx, MCP3464_IRQ_ADDR, 0b00000110);
 
