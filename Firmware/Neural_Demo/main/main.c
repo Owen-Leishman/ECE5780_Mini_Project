@@ -123,8 +123,14 @@ void app_main(void)
         .ulp_mode = ADC_ULP_MODE_DISABLE,
     };
 
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config1, &adc1_handle));
+    adc_oneshot_unit_handle_t adc2_handle;
+    adc_oneshot_unit_init_cfg_t init_config2 = {
+        .unit_id = ADC_UNIT_2,
+        .ulp_mode = ADC_ULP_MODE_DISABLE,
+    };
 
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config1, &adc1_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config2, &adc2_handle));
     
 
     adc_oneshot_chan_cfg_t config = {
@@ -136,11 +142,13 @@ void app_main(void)
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_1, &config));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_2, &config));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_3, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc2_handle, ADC_CHANNEL_0, &config));
 
     adc_cali_handle_t adc1_cali_chan0_handle = NULL;
     adc_cali_handle_t adc1_cali_chan1_handle = NULL;
     adc_cali_handle_t adc1_cali_chan2_handle = NULL;
     adc_cali_handle_t adc1_cali_chan3_handle = NULL;
+    adc_cali_handle_t adc2_cali_chan0_handle = NULL;
     
     adc_cali_line_fitting_config_t cali_config = {
         .unit_id = ADC_UNIT_1,
@@ -152,6 +160,13 @@ void app_main(void)
     adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan2_handle);  
     adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan3_handle);  
 
+    adc_cali_line_fitting_config_t cali_config_2 = {
+        .unit_id = ADC_UNIT_2,
+        .atten = ADC_ATTEN_DB_12,
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+
+    adc_cali_create_scheme_line_fitting(&cali_config_2, &adc2_cali_chan0_handle); 
     
 
 
@@ -166,6 +181,7 @@ void app_main(void)
         int channel_1_samples = 0;
         int channel_2_samples = 0;
         int channel_3_samples = 0;
+        int channel_4_samples = 0;
 
         int adc_val = 0;
         int adc_val_cal = 0;
@@ -177,6 +193,7 @@ void app_main(void)
             uint32_t adc_val_1 = 0;
             uint32_t adc_val_2 = 0;
             uint32_t adc_val_3 = 0;
+            uint32_t adc_val_4 = 0;
 
             for(int i = 0; i < AVERAGING; i++){
 
@@ -195,6 +212,10 @@ void app_main(void)
                 adc_oneshot_read(adc1_handle, ADC_CHANNEL_3, &adc_val);
                 ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan3_handle, adc_val, &adc_val_cal));
                 adc_val_3 += adc_val_cal;
+
+                adc_oneshot_read(adc2_handle, ADC_CHANNEL_0, &adc_val);
+                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc2_cali_chan0_handle, adc_val, &adc_val_cal));
+                adc_val_4 += adc_val_cal;
                 
             }        
 
@@ -202,6 +223,7 @@ void app_main(void)
             adc_val_1 = adc_val_1 >> 5;
             adc_val_2 = adc_val_2 >> 5;
             adc_val_3 = adc_val_3 >> 5;
+            adc_val_4 = adc_val_4 >> 5;
 
             payload[3 + (channel_0_samples * 2)]      = adc_val_0 >> 8;
             payload[3 + (channel_0_samples * 2) + 1]  = adc_val_0;
@@ -209,23 +231,28 @@ void app_main(void)
             samples += 1;
             
                     
-            payload[3 + (PAYLOAD_SAMPLES/ 2) + (channel_1_samples * 2)]      = adc_val_1 >> 8;
-            payload[3 + (PAYLOAD_SAMPLES/ 2) + (channel_1_samples * 2) + 1]  = adc_val_1;
+            payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2)]      = adc_val_1 >> 8;
+            payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2) + 1]  = adc_val_1;
             channel_1_samples += 1;
             samples += 1;
             
 
-            payload[3 + 2 * (PAYLOAD_SAMPLES/ 2) + (channel_2_samples * 2)]      = adc_val_2 >> 8;
-            payload[3 + 2 * (PAYLOAD_SAMPLES/ 2) + (channel_2_samples * 2) + 1]  = adc_val_2;
+            payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2)]      = adc_val_2 >> 8;
+            payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2) + 1]  = adc_val_2;
             channel_2_samples += 1;
             samples += 1;
             
       
-            payload[3 + 3 * (PAYLOAD_SAMPLES/ 2) + (channel_3_samples * 2)]      = adc_val_3 >> 8;
-            payload[3 + 3 * (PAYLOAD_SAMPLES/ 2) + (channel_3_samples * 2) + 1]  = adc_val_3;
+            payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2)]      = adc_val_3 >> 8;
+            payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2) + 1]  = adc_val_3;
             channel_3_samples += 1;
             samples += 1;
                          
+            payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2)]      = adc_val_4 >> 8;
+            payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2) + 1]  = adc_val_4;
+            channel_4_samples += 1;
+            samples += 1;
+            
             
         }
 

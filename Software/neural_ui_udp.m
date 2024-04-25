@@ -111,6 +111,7 @@ set(ax1,'XTick',[])
 set(ax2,'XTick',[])
 set(ax3,'XTick',[])
 set(ax4,'XTick',[])
+set(ax5,'XTick',[])
 
 
 while true
@@ -123,18 +124,20 @@ while true
         raw_packet = read(u,200,"uint16");
         
         if length(raw_packet) == 200
-            channel_1 = raw_packet(1:50);
-            channel_2 = raw_packet(51:100);
-            channel_3 = raw_packet(101:150);
-            channel_4 = raw_packet(151:200);
+            channel_1 = raw_packet(1:40);
+            channel_2 = raw_packet(41:80);
+            channel_3 = raw_packet(81:120);
+            channel_4 = raw_packet(121:160);
+            channel_5 = raw_packet(161:200);
 
             i = i + 1;
             
             for x = 1:length(channel_1)
-                adc_val_1(((i - 1)*50) + x) = channel_1(1, x)/15000 - 1;
-                adc_val_2(((i - 1)*50) + x) = channel_2(1, x)/15000 - 1;
-                adc_val_3(((i - 1)*50) + x) = channel_3(1, x)/15000 - 1;
-                adc_val_4(((i - 1)*50) + x) = channel_4(1, x)/15000 - 1;
+                adc_val_1(((i - 1)*40) + x) = channel_1(1, x)/15000 - 1;
+                adc_val_2(((i - 1)*40) + x) = channel_2(1, x)/15000 - 1;
+                adc_val_3(((i - 1)*40) + x) = channel_3(1, x)/15000 - 1;
+                adc_val_4(((i - 1)*40) + x) = channel_4(1, x)/15000 - 1;
+                adc_val_5(((i - 1)*40) + x) = (channel_5(1, x) - 16000) / 4000;
             end
 
 
@@ -150,6 +153,11 @@ while true
            
             plot(ax4, 1:length(adc_val_4),adc_val_4);
             ax4.set('xlim',[length(adc_val_4) - windowWidth,length(adc_val_4)]);
+
+            plot(ax5, 1:length(adc_val_5),adc_val_5);
+            ax5.set('xlim',[length(adc_val_5) - (windowWidth/4),length(adc_val_5)]);
+
+            
 
             if((dd.Value ~= prevWave) || (sld.Value ~= prevAmp))
                 amp = uint8(sld.Value * 255);
