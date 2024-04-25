@@ -14,7 +14,7 @@ write(u, [83, 0, 255],"uint8", "255.255.255.255" , 8000);
 prevWave = 0;
 prevAmp  = 0;
 
-windowWidth = 2000;
+windowWidth = 500;
 
 uifig = uifigure;
 g = uigridlayout(uifig);
@@ -107,6 +107,11 @@ temptitle.Layout.Row = 8;
 temptitle.Layout.Column = 1;
 
 
+set(ax1,'XTick',[])
+set(ax2,'XTick',[])
+set(ax3,'XTick',[])
+set(ax4,'XTick',[])
+
 
 while true
     startIndex = char(read(u,1,"Char"));
@@ -115,20 +120,36 @@ while true
         temptitle.Text = "Temperature: " + num2str(raw_temp * 0.0078125, '%.2f'); % will break if temp is negative
         
         
-        raw_packet = read(u,100,"int16");
+        raw_packet = read(u,200,"uint16");
         
-        if length(raw_packet) == 100
+        if length(raw_packet) == 200
+            channel_1 = raw_packet(1:50);
+            channel_2 = raw_packet(51:100);
+            channel_3 = raw_packet(101:150);
+            channel_4 = raw_packet(151:200);
+
             i = i + 1;
             
-            for x = 1:100
-                
-                adc_val(((i - 1)*100) + x) = (raw_packet(1, x) * 1.6 * 1000 * 10/11) / (32768 * 16);
+            for x = 1:length(channel_1)
+                adc_val_1(((i - 1)*50) + x) = channel_1(1, x)/15000 - 1;
+                adc_val_2(((i - 1)*50) + x) = channel_2(1, x)/15000 - 1;
+                adc_val_3(((i - 1)*50) + x) = channel_3(1, x)/15000 - 1;
+                adc_val_4(((i - 1)*50) + x) = channel_4(1, x)/15000 - 1;
             end
 
+
             %update graphs
-            plot(ax1, 1:length(adc_val),adc_val);
-            %set(lHandle, 'XData',1:length(adc_val), 'YData', adc_val);
-            ax1.set('xlim',[length(adc_val) - windowWidth,length(adc_val)]);
+            plot(ax1, 1:length(adc_val_1),adc_val_1);
+            ax1.set('xlim',[length(adc_val_1) - windowWidth,length(adc_val_1)]);
+
+            plot(ax2, 1:length(adc_val_2),adc_val_2);
+            ax2.set('xlim',[length(adc_val_2) - windowWidth,length(adc_val_2)]);
+
+            plot(ax3, 1:length(adc_val_3),adc_val_3);
+            ax3.set('xlim',[length(adc_val_3) - windowWidth,length(adc_val_3)]);
+           
+            plot(ax4, 1:length(adc_val_4),adc_val_4);
+            ax4.set('xlim',[length(adc_val_4) - windowWidth,length(adc_val_4)]);
 
             if((dd.Value ~= prevWave) || (sld.Value ~= prevAmp))
                 amp = uint8(sld.Value * 255);

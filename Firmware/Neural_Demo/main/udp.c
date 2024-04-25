@@ -19,7 +19,7 @@
 
 #define HOST_IP_ADDR        "192.168.8.198"
 #define PORT                8000
-#define PAYLOAD_LENGTH      205 
+#define PAYLOAD_LENGTH      405 
 
 static const char *TAG = "UDP";
 

@@ -22,6 +22,7 @@
         "regex": "c",
         "sockets.h": "c",
         "dac_continuous.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "format": "c"
     }
 }
