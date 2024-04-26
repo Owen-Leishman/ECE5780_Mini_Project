@@ -12,6 +12,7 @@
 
 // Local includes
 #include "tmp117.h"
+#include "mcp3464.h"
 #include "wifi.h"
 #include "udp.h"
 
@@ -35,11 +36,29 @@
 #define I2C_SCL 38
 #define I2C_SDA 37
 
+#define MCP3464_MCLK    5
+#define MCP3464_IRQ     6
+#define MCP3464_SDO     7
+#define MCP3464_SDI     8
+#define MCP3464_SCK     9
+#define MCP3464_CS      10
+
+
 //****************Other Definitions*******************
 
 // I2C
 #define PORT_NUMBER -1
 #define I2C_CLK_FREQ 400000    
+
+// SPI
+#define SPI_ADC_HOST 1
+#define SPI_CLK_FREQ 20000000
+
+// MCP3464
+#define MCP3464_CHANNEL_0       0b0000
+#define MCP3464_CHANNEL_1       0b0001
+#define MCP3464_CHANNEL_2       0b0010
+#define MCP3464_CHANNEL_3       0b0011
 
 // How many readings are averaged for every adc value
 #define AVERAGING   32
@@ -83,6 +102,33 @@ void app_main(void)
     gpio_set_level(HIGH_VOLTAGE_EN, 1);    
 
 
+    // Initialize SPI bus
+    ESP_LOGI(TAG, "Initializing bus SPI%d...", SPI_ADC_HOST + 1);
+
+    spi_bus_config_t buscfg = {
+        .miso_io_num = MCP3464_SDO,
+        .mosi_io_num = MCP3464_SDI,
+        .sclk_io_num = MCP3464_SCK,
+        .quadwp_io_num = -1,
+        .quadhd_io_num = -1,
+        .max_transfer_sz = 32,
+    };
+
+    ESP_ERROR_CHECK(spi_bus_initialize(SPI_ADC_HOST, &buscfg, SPI_DMA_CH_AUTO));
+
+    // Initialize ADC
+    mcp3464_conf_t mcp3464_conf = {
+        .cs_io = MCP3464_CS,
+        .host = SPI_ADC_HOST,
+        .miso_io = MCP3464_SDO,
+        .clock_speed_hz = SPI_CLK_FREQ,
+    };
+
+    mcp3464_handle_t mcp3464_handle;
+
+    ESP_ERROR_CHECK(mcp3464_init(&mcp3464_conf, &mcp3464_handle));
+
+
     // Configure I2C
     i2c_master_bus_config_t i2c_bus_config = {
         .clk_source = I2C_CLK_SRC_DEFAULT,
@@ -115,43 +161,21 @@ void app_main(void)
     
 
     // Configure the onboard ADC
-    adc_oneshot_unit_handle_t adc1_handle;
-    adc_oneshot_unit_init_cfg_t init_config1 = {
-        .unit_id = ADC_UNIT_1,
-        .ulp_mode = ADC_ULP_MODE_DISABLE,
-    };
     adc_oneshot_unit_handle_t adc2_handle;
     adc_oneshot_unit_init_cfg_t init_config2 = {
         .unit_id = ADC_UNIT_2,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
     };
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config1, &adc1_handle));
+
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config2, &adc2_handle));
     adc_oneshot_chan_cfg_t config = {
         .bitwidth = ADC_BITWIDTH_DEFAULT,
         .atten = ADC_ATTEN_DB_12,        // makes it possible to measure values larger than vref
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_0, &config));
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_1, &config));
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_2, &config));
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_3, &config));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc2_handle, ADC_CHANNEL_0, &config));
 
     // Calibrate the onboard ADC
-    adc_cali_handle_t adc1_cali_chan0_handle = NULL;
-    adc_cali_handle_t adc1_cali_chan1_handle = NULL;
-    adc_cali_handle_t adc1_cali_chan2_handle = NULL;
-    adc_cali_handle_t adc1_cali_chan3_handle = NULL;
     adc_cali_handle_t adc2_cali_chan0_handle = NULL;
-    adc_cali_line_fitting_config_t cali_config = {
-        .unit_id = ADC_UNIT_1,
-        .atten = ADC_ATTEN_DB_12,
-        .bitwidth = ADC_BITWIDTH_DEFAULT,
-    };
-    adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan0_handle);  
-    adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan1_handle);  
-    adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan2_handle);  
-    adc_cali_create_scheme_line_fitting(&cali_config, &adc1_cali_chan3_handle);  
     adc_cali_line_fitting_config_t cali_config_2 = {
         .unit_id = ADC_UNIT_2,
         .atten = ADC_ATTEN_DB_12,
@@ -159,6 +183,11 @@ void app_main(void)
     };
     adc_cali_create_scheme_line_fitting(&cali_config_2, &adc2_cali_chan0_handle); 
     
+
+    uint32_t adc_val;  
+
+    // Start first conversion, interrupt starts conversions afterwards
+    mcp3464_start_conversion(mcp3464_handle);
 
     // Create the task to revieve messages over UDP
     xTaskCreate(udp_recieve_task, "udp_client", 4096, NULL, 5, NULL);
@@ -175,76 +204,78 @@ void app_main(void)
         int channel_3_samples = 0;
         int channel_4_samples = 0;
 
-        int adc_val = 0;
+        int adc_val;
+        int adc_onboard_val = 0;
+
         int adc_val_cal = 0;
 
 
         while(samples < PAYLOAD_SAMPLES){
-
-            uint32_t adc_val_0 = 0;
-            uint32_t adc_val_1 = 0;
-            uint32_t adc_val_2 = 0;
-            uint32_t adc_val_3 = 0;
-            uint32_t adc_val_4 = 0;
-
-            // Averaage the ADC readings
-            for(int i = 0; i < AVERAGING; i++){
-
-                adc_oneshot_read(adc1_handle, ADC_CHANNEL_0, &adc_val);
-                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan0_handle, adc_val, &adc_val_cal));
-                adc_val_0 += adc_val_cal;
-            
-                adc_oneshot_read(adc1_handle, ADC_CHANNEL_1, &adc_val);
-                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan1_handle, adc_val, &adc_val_cal));
-                adc_val_1 += adc_val_cal;
-
-                adc_oneshot_read(adc1_handle, ADC_CHANNEL_2, &adc_val);
-                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan2_handle, adc_val, &adc_val_cal));
-                adc_val_2 += adc_val_cal;
-
-                adc_oneshot_read(adc1_handle, ADC_CHANNEL_3, &adc_val);
-                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan3_handle, adc_val, &adc_val_cal));
-                adc_val_3 += adc_val_cal;
-
-                adc_oneshot_read(adc2_handle, ADC_CHANNEL_0, &adc_val);
-                ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc2_cali_chan0_handle, adc_val, &adc_val_cal));
-                adc_val_4 += adc_val_cal;
+            if(xQueueReceive(mcp3464_handle->irq_queue, &adc_val, portMAX_DELAY)){
+                uint8_t channel = (adc_val >> 24) & 0b1111;
                 
-            }        
-
-            // Divide the ADC readings by 32
-            adc_val_0 = adc_val_0 >> 5;
-            adc_val_1 = adc_val_1 >> 5;
-            adc_val_2 = adc_val_2 >> 5;
-            adc_val_3 = adc_val_3 >> 5;
-            adc_val_4 = adc_val_4 >> 5;
 
 
-            // Write the ADC data to the payload
-            payload[3 + (channel_0_samples * 2)]      = adc_val_0 >> 8;
-            payload[3 + (channel_0_samples * 2) + 1]  = adc_val_0;
-            channel_0_samples += 1;
-            samples += 1;
-                    
-            payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2)]      = adc_val_1 >> 8;
-            payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2) + 1]  = adc_val_1;
-            channel_1_samples += 1;
-            samples += 1;
+                if((samples == 0) && (channel != MCP3464_CHANNEL_0)){
+                    channel = 200;
+                }
 
-            payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2)]      = adc_val_2 >> 8;
-            payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2) + 1]  = adc_val_2;
-            channel_2_samples += 1;
-            samples += 1;
-      
-            payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2)]      = adc_val_3 >> 8;
-            payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2) + 1]  = adc_val_3;
-            channel_3_samples += 1;
-            samples += 1;
-                         
-            payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2)]      = adc_val_4 >> 8;
-            payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2) + 1]  = adc_val_4;
-            channel_4_samples += 1;
-            samples += 1;    
+                switch(channel){
+                    case MCP3464_CHANNEL_0:
+                        ESP_LOGI(TAG,"ADC channel 0 Reading: %d", (uint16_t)(adc_val & 0b1111111111111111));
+                        payload[3 + (channel_0_samples * 2)]      = adc_val >> 8;
+                        payload[3 + (channel_0_samples * 2) + 1]  = adc_val;
+                        channel_0_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_1:
+                        payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2)]      = adc_val >> 8;
+                        payload[3 + (PAYLOAD_SAMPLES * 2 / 5) + (channel_1_samples * 2) + 1]  = adc_val;
+                        channel_1_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_2:
+                        payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2)]      = adc_val >> 8;
+                        payload[3 + 2 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_2_samples * 2) + 1]  = adc_val;
+                        channel_2_samples += 1;
+                        samples += 1;
+                        break;
+                    case MCP3464_CHANNEL_3:
+                        
+                        payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2)]      = adc_val >> 8;
+                        payload[3 + 3 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_3_samples * 2) + 1]  = adc_val;
+                        channel_3_samples += 1;
+                        samples += 1;
+
+                        // Do onboard adc reading
+                        uint32_t adc_val_4 = 0;
+
+                        // Average the ADC readings
+                        for(int i = 0; i < AVERAGING; i++){
+
+                            adc_oneshot_read(adc2_handle, ADC_CHANNEL_0, &adc_onboard_val);
+                            ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc2_cali_chan0_handle, adc_onboard_val, &adc_val_cal));
+                            adc_val_4 += adc_val_cal;
+                
+                        }
+
+                        // Divide the ADC readings by 32
+                        adc_val_4 = adc_val_4 >> 5;
+
+                        payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2)]      = adc_val_4 >> 8;
+                        payload[3 + 4 * (PAYLOAD_SAMPLES * 2 / 5) + (channel_4_samples * 2) + 1]  = adc_val_4;
+                        channel_4_samples += 1;
+                        samples += 1;
+
+                        break;
+                    default:
+                        ESP_LOGE(TAG,"Unexpected ADC channel");
+                }
+
+                
+            }
+     
+    
         }
 
         // Add stop bytes to payload (used for debugging)
@@ -263,8 +294,6 @@ void app_main(void)
         // Transmit the payload
         xTaskCreate(udp_client_task, "udp_client", 4096, &payload, 5, NULL); 
 
-        // Delay so the watchdog timer does not trigger
-        vTaskDelay(1);
 
     }
 
