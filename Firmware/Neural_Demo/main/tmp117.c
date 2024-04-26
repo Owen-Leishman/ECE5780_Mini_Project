@@ -10,6 +10,7 @@
 
 static const char *TAG = "TMP117";
 
+// TMP registers
 #define TMP117_TEMP     0x00
 #define TMP117_CONFIG   0x01
 #define TMP117_LIMITL   0x02

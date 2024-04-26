@@ -12,13 +12,14 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
+// Wifi credentials
 #define WIFI_SSID "ChemAirUPortable"
 #define WIFI_PASS "ChemAirU"
 
+// Wifi settings
 #define MAXIMUM_RETRY 10
 #define WIFI_SCAN_AUTH_MODE_THRESHOLD   WIFI_AUTH_OPEN
 #define WIFI_SAE_MODE                   WPA3_SAE_PWE_BOTH
-
 
 static EventGroupHandle_t s_wifi_event_group;
 
@@ -29,6 +30,14 @@ static const char *TAG = "WIFI";
 
 static int s_retry_num = 0;
 
+/**
+ * @brief Wifi event handler
+ * 
+ * @param arg 
+ * @param event_base what type of event was triggered
+ * @param event_id what event was triggered
+ * @param event_data data from the event
+ */
 static void event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
 {
@@ -51,6 +60,10 @@ static void event_handler(void* arg, esp_event_base_t event_base,
     }
 }
 
+/**
+ * @brief Initialize wifi
+ * 
+ */
 void wifiInit(void){
 
     unsigned char mac_base[6] = {0};

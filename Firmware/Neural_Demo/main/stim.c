@@ -8,13 +8,19 @@
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
 
+// Pin definitions
 #define STIM_P  17
 #define STIM_N  18
 
 
-
-
-
+/**
+ * @brief write a waveform to a wave tabel
+ * 
+ * @param type what wave to create
+ * @param amplitude the amplitude of the wave
+ * @param wave the wave table to write to
+ * @param wave_len length of the wave table
+ */
 void generate_wave(uint8_t type, uint8_t amplitude, uint8_t* wave, uint32_t wave_len){
 
     for(int i = 0; i < (wave_len/2); i += 2){
@@ -56,11 +62,15 @@ void generate_wave(uint8_t type, uint8_t amplitude, uint8_t* wave, uint32_t wave
 
 }
 
-
+/**
+ * @brief initialize the dma for stimulation
+ * 
+ * @param stim_handle the handle for the dma
+ * @return esp_err_t 
+ */
 esp_err_t stim_dma(dac_continuous_handle_t *stim_handle){
 
     esp_err_t ret = ESP_OK;
-
     
     dac_continuous_config_t stim_conf = {
         .chan_mask = DAC_CHANNEL_MASK_ALL,
