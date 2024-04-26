@@ -14,16 +14,16 @@ The hardware for the demonstration neural interface.
 - [ ] Find issues with MCP3464 ADC (may have been ESD)
 
 # Assembled Device
-![Manufactured device](ECE5780_Mini_Project/Figures/manufactured_device.jpg)
+![Manufactured device](/Figures/manufactured_device.jpg)
 >[!warning]
 >This device uses BGA components and is not trivial to solder. Due to the large amount of surface mount components on the device it is recomended to use a stencil and a reflow oven for soldering.
 
 ## Current Source Fix
-![Current Source Fix](ECE5780_Mini_Project/Figures/current_source_fix.jpg)
+![Current Source Fix](/Figures/current_source_fix.jpg)
 The AD8067ARTZ was broken (reason still unknown) so a LF353N was used to replace it for testing.
 
 ## Onboard ADC Fix
-![ Onboard ADC Fix](ECE5780_Mini_Project/Figures/onboard_adc_fix.jpg)
+![ Onboard ADC Fix](/../ECE5780_Mini_Project/Figures/onboard_adc_fix.jpg)
 The MCP3464RT ADC broke so the ESP32's onboard ADC was used. The onboard ADC can not measure voltages larger than ~200mV so voltage dividers were added to divide all of the signals into that range, 4.7K and 180R resistors were used to create the voltage dividers. This creates a lot of noise and distortion in the signals. Due to this onboard ADC will not be used or supported in future revisions.
 
 # Schematics
