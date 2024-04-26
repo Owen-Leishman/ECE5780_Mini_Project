@@ -43,15 +43,15 @@ Schematic for the power manegement circuitry which supplies power to the device 
 
 There are three voltage regulators on the device. A buck converter supplies Vsys (+3.3V) to power the ESP32 and TMP117, it is always on when voltage is present. A differential boost converter suplies Vstim (±9V) which poweres the constant current source and is controlled by the ESP32. The rest of the analog frontend is powered with a differential linear dropout regulator (LDO) which is powered from Vstim and reduces the supply noise caused by the switching regulators creating ±3.3V, this is not very effecient and will likely be changed in future revisions. The LDO is always on whenever Vstim is present.
 
-# Layout
+# PCB Layout
 
 >[!note]
 >These figures are for reference, there may be some visual issues due to how KiCad exports SVG files.
 
-## Top Layout
+## Top PCB Layout
 ![Top Layout](/Figures/Neural_Interface-layout_top.svg)
 
-## Bottom Layout
+## Bottom PCB Layout
 ![Bottom Layout](/Figures/Neural_Interface-layout_bottom.svg)
 
 ## 3D Render
