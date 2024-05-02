@@ -2,9 +2,6 @@
 >[!warning]
 >This is a demonstration device, this hardware is relatively untested and not gauranteed to be safe! This is not designed live test subjects!
 
->[!warning]
->Due to the limited performance of the onboard ADC the onboard ADC firmware will not recieve updates.
-
 ## Overview
 This is a demonstration neural interface which is meant to explore how neural interfaces work.  This device can measure four differential signals at a time which can be used to measure nerve impulses and are tolerant of ±9V. It also has a current mode stimulation channel which can create ±1mA signals with 9 bits of resolution as a means to give feedback to the nerves. The stimulation channel can handle electrodes with up to 9kΩ. The device also has a temperature sensor to measure how much it heats up to ensure that it would be safe if implanted (at least temperature wise). The device can be controlled over wifi, and is fully battery powered.
 
