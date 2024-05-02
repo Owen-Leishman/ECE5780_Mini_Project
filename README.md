@@ -6,6 +6,7 @@
 This is a demonstration neural interface which is meant to explore how neural interfaces work.  This device can measure four differential signals at a time which can be used to measure nerve impulses and are tolerant of ±9V. It also has a current mode stimulation channel which can create ±1mA signals with 9 bits of resolution as a means to give feedback to the nerves. The stimulation channel can handle electrodes with up to 9kΩ. The device also has a temperature sensor to measure how much it heats up to ensure that it would be safe if implanted (at least temperature wise). The device can be controlled over wifi, and is fully battery powered.
 
 ![Manufactured device](/Figures/manufactured_device.jpg)
+(A logo was edited out on the bottom left corner of the device, the photo is otherwise not edited)
 
 ## Organization
 - [Firmware](/Firmware/Neural_Demo/) contains the code that the device runs.
